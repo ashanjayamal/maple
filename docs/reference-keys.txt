@@ -1,0 +1,17 @@
+exm:unnamed-chunk-1
+exm:unnamed-chunk-2
+exr:unnamed-chunk-3
+exr:unnamed-chunk-4
+matrices
+defining-matrices
+system-of-linear-equations-and-matrices
+solving-linear-systems
+method-i
+method-ii
+method-iii
+dependent-systems
+inconsistent-system
+automatic-reduction
+method-iv
+method-v
+exercise
