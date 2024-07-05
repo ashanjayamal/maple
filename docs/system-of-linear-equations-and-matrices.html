@@ -78,7 +78,18 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Matrices</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#defining-matrices"><i class="fa fa-check"></i><b>1.1</b> Defining matrices</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#defining-matrices"><i class="fa fa-check"></i><b>1.1</b> Defining matrices</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#addition-and-scalar-multiplication"><i class="fa fa-check"></i><b>1.1.1</b> Addition and Scalar Multiplication</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1.2</b> Matrix Multiplication</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#transpose"><i class="fa fa-check"></i><b>1.1.3</b> Transpose</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#row-opreations"><i class="fa fa-check"></i><b>1.2</b> Row Opreations</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#determinanat-of-matrix"><i class="fa fa-check"></i><b>1.3</b> Determinanat of Matrix</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#exercise"><i class="fa fa-check"></i><b>1.4</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html"><i class="fa fa-check"></i><b>2</b> System of linear equations and matrices</a>
 <ul>
@@ -94,7 +105,7 @@
 <li class="chapter" data-level="2.3.1" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-iv"><i class="fa fa-check"></i><b>2.3.1</b> Method IV</a></li>
 <li class="chapter" data-level="2.3.2" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-v"><i class="fa fa-check"></i><b>2.3.2</b> Method V</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#exercise"><i class="fa fa-check"></i><b>2.4</b> Exercise</a></li>
+<li class="chapter" data-level="2.4" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#exercise-1"><i class="fa fa-check"></i><b>2.4</b> Exercise</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a target="blank">Ashan Jayamal</a></li>
@@ -120,16 +131,16 @@
 <h1><span class="header-section-number">Lesson 2</span> System of linear equations and matrices<a href="system-of-linear-equations-and-matrices.html#system-of-linear-equations-and-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A linear system is a collection of first degree equations. A solution to a system consists of one or more sets of specific values that our common solutions to each of the individual equations. Here is a simple example which we can solve quite easily using the solve command.
 ## Augment of a matrix</p>
-<pre><code>&gt; with(linalg):
-&gt; A:=matrix([[1,2],[2,3]]);</code></pre>
+<pre><code>[&gt; with(linalg):
+[&gt; A:=matrix([[1,2],[2,3]]);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig1.png" /></p>
-<pre><code>&gt; B:=matrix([[3,4,5],[6,7,8]]);</code></pre>
+<p><img src="figures/Lesson%205/fig1.png" /></p>
+<pre><code>[&gt; B:=matrix([[3,4,5],[6,7,8]]);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig2.png" /></p>
+<p><img src="figures/Lesson%205/fig2.png" /></p>
 <pre><code>augment(A,B);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig3.png" /></p>
+<p><img src="figures/Lesson%205/fig3.png" /></p>
 <p>The function augment joins two or more matrices together horizontally.
 The matrices and vectors must have the same number of rows.</p>
 <div id="solving-linear-systems" class="section level2 hasAnchor" number="2.1">
@@ -158,22 +169,22 @@ x \\ y\\z
 <p>A linear system is a collection of first degree equations.
 A solution to a system consists of one or more set of specific values that our common solution to each of the individual equations.
 Here is a simple example which we can solve quite easily using the solve command.</p>
-<pre><code>&gt; sys:={2*x+5*y-4*z=9,3*x+5*y+2*z=12,4*x-y+5*z=-3};
-&gt; solve(sys,{x,y,z});</code></pre>
+<pre><code>[&gt; sys:={2*x+5*y-4*z=9,3*x+5*y+2*z=12,4*x-y+5*z=-3};
+[&gt; solve(sys,{x,y,z});</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig4.png" /></p>
+<p><img src="figures/Lesson%205/fig4.png" /></p>
 <p>Maple will automatically use fractions, however you can force decimal answers using the <strong><em>evalf</em></strong> command.</p>
-<pre><code>&gt; evalf(%);</code></pre>
+<pre><code>[&gt; evalf(%);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig5.png" /></p>
+<p><img src="figures/Lesson%205/fig5.png" /></p>
 </div>
 <div id="method-ii" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Method II<a href="system-of-linear-equations-and-matrices.html#method-ii" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also convert the above system of equations to a matrix system.</p>
-<pre><code>&gt; A:=genmatrix(sys,[x,y,z],b);
-&gt; evalm(b);</code></pre>
+<pre><code>[&gt; A:=genmatrix(sys,[x,y,z],b);
+[&gt; evalm(b);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig6.png" /></p>
+<p><img src="figures/Lesson%205/fig6.png" /></p>
 <p>In this case ,</p>
 <ul>
 <li><span class="math inline">\(A\)</span> is the coefficient matrix, and</li>
@@ -181,17 +192,17 @@ Here is a simple example which we can solve quite easily using the solve command
 </ul>
 <p>The command <code>evalm(b)</code> evaluated <span class="math inline">\(b\)</span> as a matrix (a vector is a <span class="math inline">\(n \times 1\)</span> matrix).
 In other words, this command simply writes out what the vector <span class="math inline">\(b\)</span> looks like.</p>
-<pre><code>&gt; linsolve(A,b);</code></pre>
+<pre><code>[&gt; linsolve(A,b);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig7.png" /></p>
+<p><img src="figures/Lesson%205/fig7.png" /></p>
 </div>
 <div id="method-iii" class="section level3 hasAnchor" number="2.1.3">
 <h3><span class="header-section-number">2.1.3</span> Method III<a href="system-of-linear-equations-and-matrices.html#method-iii" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another way to solve a matrix equation <span class="math inline">\(Ax = b\)</span> is to left multiply both sides by the inverse matrix <span class="math inline">\(A^{-1}\)</span>, if it exists, to get the solution <span class="math inline">\(x = A^{-1}b\)</span>.</p>
-<pre><code>&gt;  inverse(A);
-&gt; evalm(inverse(A)&amp;*b);</code></pre>
+<pre><code>[&gt;  inverse(A);
+[&gt; evalm(inverse(A)&amp;*b);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig8.png" /></p>
+<p><img src="figures/Lesson%205/fig8.png" /></p>
 <p>The <code>evalm</code> command forces a matrix computation and express the result.</p>
 <hr />
 </div>
@@ -201,7 +212,7 @@ In other words, this command simply writes out what the vector <span class="math
 <p>Some systems are dependent which means there are an infinite number of solutions. The form of these solutions will entail the use of parameters.
 Let’s look an example using two different methods; <code>solve</code> and <code>linsolve</code>.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 2.1  </strong></span><span class="math display">\[
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 2.1  </strong></span><span class="math display">\[
 \begin{array}{ccccccccc}
 x &amp;-&amp; 2y&amp;+&amp; z &amp;=&amp; &amp;3\\
 x &amp;+&amp; y &amp;-&amp; 2z&amp;=&amp;-&amp;4\\
@@ -209,17 +220,17 @@ x &amp;+&amp; y &amp;-&amp; 2z&amp;=&amp;-&amp;4\\
 \end{array}
 \]</span></p>
 </div>
-<pre><code>&gt; restart;
-&gt; with(linalg):
-&gt; sys:={x-2*y+z=3,x+y-2*z=-4,2*x-y-z=-1};
-&gt; solve(sys,{x,y,z});</code></pre>
+<pre><code>[&gt; restart;
+[&gt; with(linalg):
+[&gt; sys:={x-2*y+z=3,x+y-2*z=-4,2*x-y-z=-1};
+[&gt; solve(sys,{x,y,z});</code></pre>
 <p><em>output</em>:
-<img src="figures/Lessson%205/fig9.png" /></p>
-<pre><code>&gt; A:=genmatrix(sys,[x,y,z],b);
-&gt; evalm(b);
-&gt; linsolve(A,b);</code></pre>
+<img src="figures/Lesson%205/fig9.png" /></p>
+<pre><code>[&gt; A:=genmatrix(sys,[x,y,z],b);
+[&gt; evalm(b);
+[&gt; linsolve(A,b);</code></pre>
 <p><em>output</em>:</p>
-<p><img src="figures/Lessson%205/fig10.png" /></p>
+<p><img src="figures/Lesson%205/fig10.png" /></p>
 <p>In both cases, the solution contains a parameter.
 The <code>solve</code> command express it in terms actual variable used,and the <code>linsolve</code> command use the funny t character to distinguish it from a variable you might have defined yourself.</p>
 <hr />
@@ -228,7 +239,7 @@ The <code>solve</code> command express it in terms actual variable used,and the 
 <h2><span class="header-section-number">2.3</span> Inconsistent System<a href="system-of-linear-equations-and-matrices.html#inconsistent-system" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An Inconsistent system has no solution. Maple generally, refers to answer questions which have no answer.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 2.2  </strong></span><span class="math display">\[
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Example 2.2  </strong></span><span class="math display">\[
 \begin{array}{ccccccccc}
 x &amp;+&amp; y &amp;-&amp; 3z &amp;= 10\\
 x &amp;+&amp; y &amp;-&amp;  z &amp;= 1\\
@@ -237,54 +248,54 @@ x &amp;+&amp; y &amp;+&amp;  z &amp;= 8
 \]</span></p>
 </div>
 <p>Let’s try to solve this system.</p>
-<pre><code>&gt; restart;
-&gt; with(linalg):
-&gt; sys:={x+y-3*z=10,x+y-z=1,x+y+z=8};
-&gt; solve(sys,{x,y,z});</code></pre>
+<pre><code>[&gt; restart;
+[&gt; with(linalg):
+[&gt; sys:={x+y-3*z=10,x+y-z=1,x+y+z=8};
+[&gt; solve(sys,{x,y,z});</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig11.png" /></p>
+<p><img src="figures/Lesson%205/fig11.png" /></p>
 <p>This method does not work. It does not return anything.</p>
 <p>Let’s try <code>linsolve</code> method.</p>
-<pre><code>&gt; A:=genmatrix(sys,[x,y,z],b);
-&gt; linsolve(A,b);
+<pre><code>[&gt; A:=genmatrix(sys,[x,y,z],b);
+[&gt; linsolve(A,b);
 </code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig12.png" /></p>
+<p><img src="figures/Lesson%205/fig12.png" /></p>
 <p>This method also does not works.</p>
-<pre><code>&gt; evalm(inverse(A)&amp;*b);</code></pre>
+<pre><code>[&gt; evalm(inverse(A)&amp;*b);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig13.png" /></p>
+<p><img src="figures/Lesson%205/fig13.png" /></p>
 <div id="automatic-reduction" class="section level4 hasAnchor" number="2.3.0.1">
 <h4><span class="header-section-number">2.3.0.1</span> Automatic Reduction<a href="system-of-linear-equations-and-matrices.html#automatic-reduction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<pre><code>&gt; sys:={3*x+5*y+2*z=12,2*x+5*y-4*z=9,4*x-y+5*z=-3};
-&gt; evalm(b);
-&gt; C:=augment(A,b);</code></pre>
+<pre><code>[&gt; sys:={3*x+5*y+2*z=12,2*x+5*y-4*z=9,4*x-y+5*z=-3};
+[&gt; evalm(b);
+[&gt; C:=augment(A,b);</code></pre>
 <p><em>Output</em>:</p>
-<p><img src="figures/Lessson%205/fig14.png" /></p>
+<p><img src="figures/Lesson%205/fig14.png" /></p>
 </div>
 <div id="method-iv" class="section level3 hasAnchor" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Method IV<a href="system-of-linear-equations-and-matrices.html#method-iv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An even faster method is simplifying let maple to do all the work for us. The <code>gausselim</code> command will perform all of the steps of Gaussian eliminations and reduce an augmented matrix to <strong>row echelon form</strong>.</p>
-<pre><code>&gt; sys:={3*x+5*y-2*z=12,2*x+5*y-4*z=9,4*x-y+5*z=-3};
-&gt; A:=genmatrix(sys,[x,y,z],b);
-&gt; evalm(b);
-&gt; C:=augment(A,b);
-&gt; gausselim(C);</code></pre>
-<p><img src="figures/Lessson%205/fig15.png" /></p>
+<pre><code>[&gt; sys:={3*x+5*y-2*z=12,2*x+5*y-4*z=9,4*x-y+5*z=-3};
+[&gt; A:=genmatrix(sys,[x,y,z],b);
+[&gt; evalm(b);
+[&gt; C:=augment(A,b);
+[&gt; gausselim(C);</code></pre>
+<p><img src="figures/Lesson%205/fig15.png" /></p>
 </div>
 <div id="method-v" class="section level3 hasAnchor" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Method V<a href="system-of-linear-equations-and-matrices.html#method-v" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The command <code>gaussjord</code> does the same thing.
 It performs all the steps of Gauss Jordan elimination and reduces and reduces an augmented matrix into reduced row echelon form.</p>
-<pre><code>&gt; gaussjord(C);</code></pre>
-<p><img src="figures/Lessson%205/fig16.png" /></p>
+<pre><code>[&gt; gaussjord(C);</code></pre>
+<p><img src="figures/Lesson%205/fig16.png" /></p>
 <hr />
 </div>
 </div>
-<div id="exercise" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Exercise<a href="system-of-linear-equations-and-matrices.html#exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Exercise<a href="system-of-linear-equations-and-matrices.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 2.1  </strong></span>Solve the following system of equations.
+<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.1  </strong></span>Solve the following system of equations.
 <span class="math display">\[
 \begin{array}{ccccccc}
 x_1  &amp;+&amp; 2x_2 &amp;+&amp; 3x_3 &amp;= 9 \\
@@ -294,7 +305,7 @@ x_1  &amp;+&amp; 2x_2 &amp;+&amp; 3x_3 &amp;= 9 \\
 \]</span></p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 2.2  </strong></span>A small manufacturing plant makes three types of inflatable boats: one-person, two-person, and four-person models.
+<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 2.2  </strong></span>A small manufacturing plant makes three types of inflatable boats: one-person, two-person, and four-person models.
 Each boat requires the services of three departments, as listed in the table.
 The cutting, assembly, and packaging departments have available a maximum of 380, 330, and 120 labor hours per week, respectively.</p>
 <table>
