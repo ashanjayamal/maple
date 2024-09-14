@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan J" />
 
 
-<meta name="date" content="2024-07-16" />
+<meta name="date" content="2024-09-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -73,7 +73,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">MAPLE</a></li>
+<li><a href="./">Maple</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to Maple</a>
@@ -228,7 +228,7 @@
 <li class="chapter" data-level="9.12" data-path="introduction-to-maple-1.html"><a href="introduction-to-maple-1.html#maple-help-1"><i class="fa fa-check"></i><b>9.12</b> MAPLE Help</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a target="blank">Ashan Jayamal</a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -273,58 +273,19 @@ The matrices and vectors must have the same number of rows.</p>
 <li>An <strong>inconsistent system</strong> has no solution.</li>
 <li>A <strong>dependent system</strong> has infinitely many solutions.</li>
 </ul>
-<table>
-<colgroup>
-<col width="21%" />
-<col width="31%" />
-<col width="21%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Type of Linear System</th>
-<th align="center">Independent Systems</th>
-<th align="center">Inconsistent Systems</th>
-<th align="center">Dependent Systems</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">No of Solution</td>
-<td align="center">Exactly one solution</td>
-<td align="center">No solution</td>
-<td align="center">Infinitely many solutions</td>
-</tr>
-<tr class="even">
-<td align="left">Example 1</td>
-<td align="center"><span class="math display">\[\begin{align}x - 3y &amp;=-3\\2x + y &amp;= 8\end{align}\]</span></td>
-<td align="center"><span class="math display">\[\begin{align}x - 3y &amp;= - 3\\x -y &amp;=3\end{align}\]</span></td>
-<td align="center"><span class="math display">\[\begin{align}x - 3y &amp;= - 3\\2x + 6y &amp;= -6 \end{align}\]</span></td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="center"><img src="figures/Lesson%205/1.jpg" /></td>
-<td align="center"><img src="figures/Lesson%205/2.jpg" /></td>
-<td align="center"><img src="figures/Lesson%205/3.jpg" /></td>
-</tr>
-<tr class="even">
-<td align="left">Example 2</td>
-<td align="center"><span class="math display">\[\begin{align}x+y+z&amp;=2\\
-6x-4y+5z&amp;=1\\
-5x+2y+2z&amp;=3\end{align}\]</span></td>
-<td align="center"><span class="math display">\[\begin{align}x-3y+z&amp;=4\\-y-4z&amp;=7\\2y+8z&amp;=24 \end{align}\]</span></td>
-<td align="center"><span class="math display">\[\begin{align}2x+y-3z&amp;=0\\
-4x+2y-6z&amp;=0\\
-x-y+z&amp;=0\end{align}\]</span></td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="center"><img src="figures/Lesson%205/23.jpg" /></td>
-<td align="center"><img src="figures/Lesson%205/22.jpg" /></td>
-<td align="center"><img src="figures/Lesson%205/21.jpg" /></td>
-</tr>
-</tbody>
-</table>
+<!---|Type of Linear\ System |Independent\ Systems | Inconsistent\ Systems |Dependent\ Systems|
+|:-------------|:-------------------:|:------------:|:---------------:|
+|No of Solution|Exactly one solution |No solution |Infinitely many solutions|
+|Example 1|\[\begin{align}x - 3y &=-3\\2x + y &= 8\end{align}\]|\[\begin{align}x - 3y &= - 3\\x -y &=3\end{align}\]|\[\begin{align}x - 3y &= - 3\\2x + 6y &= -6 \end{align}\]|
+||![](figures/Lesson 5/1.jpg)|![](figures/Lesson 5/2.jpg)|![](figures/Lesson 5/3.jpg)|
+|Example 2|\[\begin{align}x+y+z&=2\\
+6x-4y+5z&=1\\
+5x+2y+2z&=3\end{align}\]|\[\begin{align}x-3y+z&=4\\-y-4z&=7\\2y+8z&=24 \end{align}\]|\[\begin{align}2x+y-3z&=0\\
+4x+2y-6z&=0\\
+x-y+z&=0\end{align}\]|
+||![](figures/Lesson 5/23.jpg)|![](figures/Lesson 5/22.jpg)|![](figures/Lesson 5/21.jpg)|
+
+--->
 <p>Let’s try to solve linear system.</p>
 <p><strong>Independent Systems</strong>:</p>
 <p><span class="math display">\[ \begin{array}{ccccccc}
@@ -391,7 +352,7 @@ In other words, this command simply writes out what the vector <span class="math
 <p>Some systems are dependent which means there are an infinite number of solutions. The form of these solutions will entail the use of parameters.
 Let’s look an example using two different methods; <code>solve</code> and <code>linsolve</code>.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-24" class="example"><strong>Example 4.1  </strong></span><span class="math display">\[
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 4.1  </strong></span><span class="math display">\[
 \begin{array}{ccccccccc}
 x &amp;-&amp; 2y&amp;+&amp; z &amp;=&amp; &amp;3\\
 x &amp;+&amp; y &amp;-&amp; 2z&amp;=&amp;-&amp;4\\
@@ -416,7 +377,7 @@ The <code>solve</code> command express it in terms actual variable used,and the 
 <p><strong>Inconsistent System</strong></p>
 <p>An Inconsistent system has no solution. Maple generally, refers to answer questions which have no answer.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 4.2  </strong></span><span class="math display">\[
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 4.2  </strong></span><span class="math display">\[
 \begin{array}{ccccccccc}
 x &amp;+&amp; y &amp;-&amp; 3z &amp;= 10\\
 x &amp;+&amp; y &amp;-&amp;  z &amp;= 1\\
@@ -473,7 +434,7 @@ It performs all the steps of Gauss Jordan elimination and reduces and reduces an
 <div id="exercise-5" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Exercise<a href="system-of-linear-equations-and-matrices.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-26" class="exercise"><strong>Exercise 4.1  </strong></span>Solve the following system of equations.
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 4.1  </strong></span>Solve the following system of equations.
 <span class="math display">\[
 \begin{array}{ccccccc}
 x_1  &amp;+&amp; 2x_2 &amp;+&amp; 3x_3 &amp;= 9 \\
@@ -483,7 +444,7 @@ x_1  &amp;+&amp; 2x_2 &amp;+&amp; 3x_3 &amp;= 9 \\
 \]</span></p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-27" class="exercise"><strong>Exercise 4.2  </strong></span>A small manufacturing plant makes three types of inflatable boats: one-person, two-person, and four-person models.
+<p><span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 4.2  </strong></span>A small manufacturing plant makes three types of inflatable boats: one-person, two-person, and four-person models.
 Each boat requires the services of three departments, as listed in the table.
 The cutting, assembly, and packaging departments have available a maximum of 380, 330, and 120 labor hours per week, respectively.</p>
 <table>
@@ -568,8 +529,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-LinSys.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
