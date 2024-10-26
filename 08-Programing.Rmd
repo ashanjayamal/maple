@@ -1,1 +1,22 @@
 # Basic Programming 
+## Simple Procedures
+
+
+A Maple procedure (a type of program) is a group of statements  that are processed together. The easiest way to create a Maple procedure is to enclose a sequence of commands, which can be used to perform a computation interactively, between the `proc(...)` and `end proc` statements.
+
+A Maple procedurc has the following syntax:
+```
+proc ( seqvar )
+statseq ;
+end;
+```
+where
+
+- `seqvar` is a sequence of symbols of inputs separated by commas, and 
+- `statseq` is a sequence of statements separated by semicolons.
+
+The following procedure generates the string "Hello World". Enter this procedure in a Maple session by entering its definition on one line. If **no input is required to run a procedure**, that is, no formal parameters are required; **enter empty parentheses in the heading of the procedure** definition and in procedure calls.
+
+### 
+
+## Conditional Statements

@@ -1,1 +1,45 @@
 # Basic of Number Theory
+Most (but not all) number theory related commands are contained within the package of function called `numtheory`. Before Maple can do any of these functions, this package must loaded into the Maple memory.
+
+```
+with (numtheory) :
+```
+
+## Prime numbers, Factoring and Divisibility
+
+- `ithprime(n)`
+The `ithprime`(n)` function returns the n th prime number, where the first prime number is 2.
+```
+> ithprime(1);
+```
+
+```
+> ithprime(20);
+```
+
+```
+> ithprime(320);
+```
+
+```
+> ithprime(55589);
+```
+
+- `isprime(n);`
+The `isprime(n)` function check to see if the,number n is most probably a prime.
+
+```
+> isprime (8) ;
+```
+
+```
+> isprime (17) ;
+```
+
+```
+> isprime (45896) ;
+```
+
+```
+> isprime (37813) ;
+```

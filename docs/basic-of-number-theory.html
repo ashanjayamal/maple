@@ -163,8 +163,18 @@
 <li class="chapter" data-level="7.5.1" data-path="differential-equations.html"><a href="differential-equations.html#exercise-6"><i class="fa fa-check"></i><b>7.5.1</b> Exercise</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html"><i class="fa fa-check"></i><b>8</b> Basic of Number Theory</a></li>
-<li class="chapter" data-level="9" data-path="basic-programming.html"><a href="basic-programming.html"><i class="fa fa-check"></i><b>9</b> Basic Programming</a></li>
+<li class="chapter" data-level="8" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html"><i class="fa fa-check"></i><b>8</b> Basic of Number Theory</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#prime-numbers-factoring-and-divisibility"><i class="fa fa-check"></i><b>8.1</b> Prime numbers, Factoring and Divisibility</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="basic-programming.html"><a href="basic-programming.html"><i class="fa fa-check"></i><b>9</b> Basic Programming</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="basic-programming.html"><a href="basic-programming.html#simple-procedures"><i class="fa fa-check"></i><b>9.1</b> Simple Procedures</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="basic-programming.html"><a href="basic-programming.html#section"><i class="fa fa-check"></i><b>9.1.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="basic-programming.html"><a href="basic-programming.html#conditional-statements"><i class="fa fa-check"></i><b>9.2</b> Conditional Statements</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="matrices.html"><a href="matrices.html"><i class="fa fa-check"></i><b>10</b> Matrices</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="matrices.html"><a href="matrices.html#defining-matrices"><i class="fa fa-check"></i><b>10.1</b> Defining matrices</a>
@@ -258,7 +268,28 @@
             <section class="normal" id="section-">
 <div id="basic-of-number-theory" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Lesson 8</span> Basic of Number Theory<a href="basic-of-number-theory.html#basic-of-number-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Most (but not all) number theory related commands are contained within the package of function called <code>numtheory</code>. Before Maple can do any of these functions, this package must loaded into the Maple memory.</p>
+<pre><code>with (numtheory) :</code></pre>
+<div id="prime-numbers-factoring-and-divisibility" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Prime numbers, Factoring and Divisibility<a href="basic-of-number-theory.html#prime-numbers-factoring-and-divisibility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><code>ithprime(n)</code>
+The <code>ithprime</code>(n)` function returns the n th prime number, where the first prime number is 2.</li>
+</ul>
+<pre><code>&gt; ithprime(1);</code></pre>
+<pre><code>&gt; ithprime(20);</code></pre>
+<pre><code>&gt; ithprime(320);</code></pre>
+<pre><code>&gt; ithprime(55589);</code></pre>
+<ul>
+<li><code>isprime(n);</code>
+The <code>isprime(n)</code> function check to see if the,number n is most probably a prime.</li>
+</ul>
+<pre><code>&gt; isprime (8) ;</code></pre>
+<pre><code>&gt; isprime (17) ;</code></pre>
+<pre><code>&gt; isprime (45896) ;</code></pre>
+<pre><code>&gt; isprime (37813) ;</code></pre>
 
+</div>
 </div>
             </section>
 
