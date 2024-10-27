@@ -1,5 +1,6 @@
 # Basic Algebra
 
+
 ## Variables and Expressions
 
 Study how we write the following expressions in Maple.

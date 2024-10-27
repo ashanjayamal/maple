@@ -19,6 +19,8 @@ github-repo: rstudio/bookdown-demo
 
 ## What is Maple?
 
+
+
 - Maple is a Symbolic Computation System or Computer Algebra System which can be used to obtain exact analytical solutions to many mathematical problems, including integrals, systems of equations, differential equations, and problems in linear algebra.
 - It also has the capability of plotting functions in 2D and 3D and displaying animations.
 - Maple can perform calculations in binding speed, but one has to be responsible for making these calculations meaningfully and mathematically correct.
@@ -49,7 +51,7 @@ Maple classic worksheets are saved with the extension “.mws”, but in the sta
 ![](figures/Lesson 1/fig3.png)
 - If you want to make any comments you can use the text format by clicking on the box `T` in the tool bar or use the symbol `#`.
 
-![](figures/Lesson 1/vedio1.mp4){width=100%}
+<!---![](figures/Lesson 1/vedio1.mp4){width=100%}--->
 
 <!-- ![](figures/Lesson 1/GIF.gif){width=100%} -->
 

@@ -31,17 +31,77 @@ Maple can handle most of the common operations with vectors.
 ### Vector addition 
 The commonly used algebra operations on vectors are as follows: 
 
+```
+[> u:=vector([2,-1,1]); 
+[> v:=vector([0,3,-2]); 
+[> u+v; 
+```
+
+![](figures/Vectors/fig3.png)
+
+Notice that just typing $u+v$  doesn't work the way you expect. To see the entries you need to use `evalm` which stands for Evaluate as a Matrix. So now:
+
+```
+> evalm(u+v); 
+> evalm(u-v); 
+```
+
+![](figures/Vectors/fig4.png)
+
+
+
+
 ### Multiplication by a scalar
+
+```
+[> evalm(2*v); 
+[> evalm(3*u+2*v); 
+```
+
+![](figures/Vectors/fig5.png)
 
 ### Dot  product and cross product 
 
-To do the dot and cross products, you have the commands `dotprod` and `crossprod`. 
-But **you must load the** `linalg` **package** before entering those commands. 
+To do the dot and cross products, you have the commands `dotprod` and `crossprod`. But **you must load the** `linalg` **package** before entering those commands. 
+
+
+But you must load the ‘linalg’ package before entering those commands. 
+
+```
+[> with(linalg): 
+[> dotprod(u,v); 
+[> crossprod(u,v); 
+```
+![](figures/Vectors/fig6.png)
+
+```
+[> crossprod([1,2,3],[-2,0,1]); 
+```
+
+![](figures/Vectors/fig6.png)
 
 
 ### Scalar triple product
 
 There are two methods to get the scalar triple product. 
+
+```
+[> u:=vector([3,-1,2]); 
+[> v:=vector([5,7,1]); 
+[> w:=vector([0,1,2]);
+```
+- *Method I*
+
+```
+ dotprod(u,crossprod(v,w)); 
+```
+
+- *Method II*
+```
+ det(augment(u,v,w)); 
+```
+
+![](figures/Vectors/fig8.png)
 
 ### Magnitude of a vector 
 
@@ -59,13 +119,46 @@ Vectors are determined by both a magnitude and a direction and they are represen
 
 ### Sum of two vectors 
 
+The sum of two vectors $v_1$ and $v_2$, written $v_1+v_2$  is the vector geometrically determined as follows.
+
+```
+[> restart;with(plots): 
+[> v1:=arrow([3,5],width=0.1,color=blue): 
+[> v2:=arrow([-1,2.5],width=0.1,color=red): 
+[> sumvectors:=arrow([3,5]+[-1,2.5],width=0.2,color=green): 
+[> display({v1,v2,sumvectors}); 
+```
+
+![](figures/Vectors/fig1.jpg)
+
+
+
 ### Difference of two vectors
+
+If $v_1$ and $v_2$ are any two vectors, we define the difference of the vectors to be the vector $v_1-v_2$ and we can construct it by plotting the sum of the vector $v_1$  and the vector $-v_2$.
+
+```
+[> restart;with(plots): 
+[> v1:=arrow([3,5],width=0.1,color=blue): 
+[> v2:=arrow([1,-2.5],width=0.1,color=red): 
+[> sumvectors:=arrow([3,5]+[1,-2.5],width=0.2,color=green): 
+[> display({v1,v2,sumvectors});
+```
+
+![](figures/Vectors/fig2.jpg)
+
 
 ### Multiplying a vector by a scalar 
 
-
-
-
+Multiplying a vector by a scalar If $v$ is a nonzero vector and$c$ is a nonzero scalar, we define the product of $c$ and $v$, denoted $v$, to be the vector whose length is $|c|$ times the length of $v$ and whose direction is the same 
+as that of $v$ if $c > 0$ and opposite to that of $v$ if $c < 0$. 
+```
+[> restart;with(plots): 
+[> v:=arrow([3,5],width=0.5,color=blue): 
+[> v_times_5:=arrow([3*5,5*5],width=0.6,color=green): 
+[> display(v,v_times_5); 
+```
+![](figures/Vectors/fig3.jpg)
 
 
 

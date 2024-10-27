@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan J" />
 
 
-<meta name="date" content="2024-10-27" />
+<meta name="date" content="2024-10-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -369,24 +369,24 @@ are available; otherwise, no labels are used.</p>
 <h2><span class="header-section-number">4.2</span> Multiple Graphs<a href="plots.html#multiple-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you want to compare plots, you can have two or more plot windows open at the same time or you can plot more than one curve on the same set of axes. The plot command offers options which control the number of points at which the function is plotted, the number of tick marks on the axes and the placing of titles on the graph. Read the help page on plot to find out about these options.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 4.3  </strong></span>z</p>
+<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 4.3  </strong></span>.</p>
 </div>
 <pre><code>[&gt; plot([x^2,(x-2)^2+2,-x^2-2],x=-5..5,y=-10..10,title=&quot;multiple graphs&quot;,color=[blue,magenta,green]); </code></pre>
 <p><img src="figures/Plots/fig7.png" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 4.4  </strong></span>.</p>
+<p><span id="exm:unnamed-chunk-4" class="example"><strong>Example 4.4  </strong></span>. . .</p>
 </div>
 <pre><code>[&gt; plot([sin(x),cos(x),tan(x)],x=-Pi..Pi,y=-5..5,title=&quot;SimpleTrigFunctions&quot;,legend=[&quot;sin(x)&quot;,&quot;cos(x)&quot;,&quot;tan(x)&quot;],linestyle=[1,20,25],color=[red,blue,green]);</code></pre>
 <p><img src="figures/Plots/fig8.png" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 4.5  </strong></span>.</p>
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 4.5  </strong></span>. .</p>
 </div>
 <pre><code>[&gt; p1:=plot(x^3-2*x^2+1,x=-Pi..Pi,style=point,color=[blue]): 
 [&gt; p2:=plot(5*x^2+0.005*cos(x)^2,x=-Pi..Pi,style=line,color=[magenta]): 
 [&gt; plots[display]({p1,p2});</code></pre>
 <p><img src="figures/Plots/fig9.png" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 4.6  </strong></span>.</p>
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 4.6  </strong></span>…</p>
 </div>
 <pre><code>[&gt; f:=x-&gt;5*x/(2*x+9): 
 [&gt; g:=x-&gt;sqrt(x-3): 
@@ -553,9 +553,9 @@ First let’s look at the simplest command plot, which is contained in the main 
 [&gt; with(plots): 
 [&gt; plot3d(sin(x*y),x=-Pi/2..Pi/2,y=-Pi..Pi); 
 </code></pre>
-<!--![](figures/Plots/vid.mp4){width=100%}-->
+<!---![](figures/Plots/vid.mp4){width=100%}--->
 <pre><code>[&gt; plot3d((1.3)^x * sin(y), x=-1..2*Pi, y=0..Pi, coords=spherical, style=patch);</code></pre>
-<!--![](figures/Plots/vid2.mp4){width=100%}-->
+<!---![](figures/Plots/vid2.mp4){width=100%}--->
 </div>
 <div id="exercise-5" class="section level2 hasAnchor" number="4.11">
 <h2><span class="header-section-number">4.11</span> Exercise<a href="plots.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>

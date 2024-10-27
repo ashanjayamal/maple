@@ -1,5 +1,6 @@
 # Plots
 
+
 **Maple Packages**
 
 In Maple we can use various packages for special applications. In order to use a package, you have to load the package first using the `with` command.
@@ -133,7 +134,7 @@ If you want to compare plots, you can have two or more plot windows open at the 
 
 
 ```{example}
-z
+.
 ```
 
 ```
@@ -143,7 +144,7 @@ z
 ![](figures/Plots/fig7.png)
 
 ```{example}
-.
+. . .
 ```
 
 ```
@@ -153,7 +154,7 @@ z
 ![](figures/Plots/fig8.png)
 
 ```{example}
-.
+. . 
 ```
 
 ```
@@ -165,7 +166,7 @@ z
 ![](figures/Plots/fig9.png)
 
 ```{example}
-.
+...
 ```
 
 ```
@@ -447,12 +448,12 @@ Example:
 
 ```
 
-![](figures/Plots/vid.mp4){width=100%}
+<!---![](figures/Plots/vid.mp4){width=100%}--->
 
 ```
 [> plot3d((1.3)^x * sin(y), x=-1..2*Pi, y=0..Pi, coords=spherical, style=patch);
 ```
-![](figures/Plots/vid2.mp4){width=100%}
+<!---![](figures/Plots/vid2.mp4){width=100%}--->
 
 ## Exercise
 
