@@ -4,11 +4,13 @@
 
 In Maple we can use various packages for special applications. In order to use a package, you have to load the package first using the `with` command.
 
-**Example**\
-`> with(student):`\
-`> with(linalg):`
+**Example**
+
+- `> with(student):`
+- `> with(linalg):`
 
 So, when you are dealing with plots, you have to load the package `plot`.
+
 ```
  > with(plots):
 ```
@@ -16,6 +18,103 @@ So, when you are dealing with plots, you have to load the package `plot`.
 
 ##  Basic Graphs
 Using the plot command you can graph a function. You have to give the range of values for $x$ otherwise Maple will use the default range.
+
+```
+[> plot(x^2+1,x=-3..3); 
+```
+
+![](figures/Plots/fig1.png)
+
+```
+[> plot(abs(x),x=-infinity..infinity); 
+```
+
+![](figures/Plots/fig2.png)
+
+```
+[> f:=x->2*x^3+2*x+1; 
+[> plot(f(x),x=-3..3); 
+```
+
+![](figures/Plots/fig3.png)
+
+
+You can give the vertical range also. 
+
+```
+[> plot(4-(x-3)^2,x=-5..5,y=-5..5);
+
+```
+
+![](figures/Plots/fig4.png)
+
+
+
+You can customize your plots using various formatting options within the `plot` command. Here are some of the key options:
+
+- **Color:**
+
+```
+color=n
+```
+  - Specifies the color of the curves.
+
+- **Labels:**
+
+```
+labels=[x, y]
+```
+  * Sets labels for the x and y axes.
+  * Defaults to variable names if available.
+
+- **Legend:**
+
+```
+legend=s
+```
+  * Adds a legend to the plot.
+  * For multiple curves, `s` can be a list of legend entries.
+
+- **Linestyle:**
+
+```
+linestyle=t
+```
+  * Controls the line style of curves.
+  * `t` can be a string (e.g., `solid`, `dot`, `dash`) or an integer (1-7) representing a specific style.
+
+- **Title:**
+
+```
+title=t
+```
+ * Sets the title for the plot.
+ * `t` can be a string or a list (title, font option).
+
+**Example:**
+
+```maple
+[> plot(sin(x), x=2*Pi..2*Pi, title="sineGraph", color=[blue]);
+[> plot(sinh(x), x=-Pi..Pi, title="sinh graph");
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Multiple Graphs
 If you want to compare plots, you can have two or more plot windows open at the same time or you can plot more than one curve on the same set of axes. The plot command offers options which control the number of points at which the function is plotted, the number of 

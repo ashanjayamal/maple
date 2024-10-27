@@ -4,9 +4,10 @@
 
 A Maple procedure (a type of program) is a group of statements  that are processed together. The easiest way to create a Maple procedure is to enclose a sequence of commands, which can be used to perform a computation interactively, between the `proc(...)` and `end proc` statements.
 
-A Maple procedurc has the following syntax:
+A Maple procedure has the following syntax:
+
 ```
-proc ( seqvar )
+proc(seqvar)
 statseq ;
 end;
 ```
@@ -16,6 +17,25 @@ where
 - `statseq` is a sequence of statements separated by semicolons.
 
 The following procedure generates the string "Hello World". Enter this procedure in a Maple session by entering its definition on one line. If **no input is required to run a procedure**, that is, no formal parameters are required; **enter empty parentheses in the heading of the procedure** definition and in procedure calls.
+
+> Remark: If you  need to go to an new row without executing in Maple use `Shift+Enter`.
+### Procedures with no inputs (parameters)
+
+```
+[> hello:= proc() "Hello , This is my first Programm " ;
+end proc;
+[> hello ( ) ;
+```
+
+You can also enter a procedure or any Maple statement on multiple lines. To move the cursor to the next line as you
+are entering a multiline statement, hold the Shift key and press Enter at the end of each line.
+> hello
+"Hello , This is my first Programm ;
+end proc;
+> hello ( ) ;
+hello := pmc() "Hello , This is my first Programméhd pmc
+"I-lello , This is my first Programm
+
 
 ### 
 

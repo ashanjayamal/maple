@@ -177,3 +177,8 @@ exercise-12
 maple-help-1
 method-1
 exercise-13
+summation
+theory-of-congrunce
+integer-modulo-n
+complete-square
+procedures-with-no-inputs-parameters

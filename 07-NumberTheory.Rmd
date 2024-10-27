@@ -13,6 +13,17 @@ The `ithprime`(n)` function returns the n th prime number, where the first prime
 > ithprime(1);
 ```
 
+## Summation
+
+## Theory of Congrunce
+### Integer Modulo n
+
+```{definition}
+
+```
+## Complete Square
+
+##
 ```
 > ithprime(20);
 ```
