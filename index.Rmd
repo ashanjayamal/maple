@@ -53,7 +53,7 @@ Maple classic worksheets are saved with the extension “.mws”, but in the sta
 ![](figures/Lesson 1/fig3.png)
 - If you want to make any comments you can use the text format by clicking on the box `T` in the tool bar or use the symbol `#`.
 
-<!--![](figures/Lesson 1/vedio1.mp4){width=100%}-->
+![](figures/Lesson 1/vedio1.mp4){width=100%}
 
 <!-- ![](figures/Lesson 1/GIF.gif){width=100%} -->
 
@@ -66,9 +66,11 @@ Arithmetic operators follow the same precedence rules as in Mathematics, and the
 [> 312+121;
 ```
 ![](figures/Lesson 1/fig4.png)
+
 ```
 > 125-45;
 ```
+
 ![](figures/Lesson 1/fig5.png)
 
 The `* `  key is used for multiplication, `/` for division and `^` for the power.
@@ -77,6 +79,7 @@ The `* `  key is used for multiplication, `/` for division and `^` for the power
 ```
 [> 13*267;
 ```
+
 ![](figures/Lesson 1/fig6.png)
 
 ```
@@ -84,9 +87,11 @@ The `* `  key is used for multiplication, `/` for division and `^` for the power
 ```
 ![](figures/Lesson 1/fig7.png)
 
+
 ```
 [> 561/5;
 ```
+
 ![](figures/Lesson 1/fig8.png)
 
 ```
