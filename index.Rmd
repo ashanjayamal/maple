@@ -53,7 +53,7 @@ Maple classic worksheets are saved with the extension “.mws”, but in the sta
 ![](figures/Lesson 1/fig3.png)
 - If you want to make any comments you can use the text format by clicking on the box `T` in the tool bar or use the symbol `#`.
 
-<!-- ![](figures/Lesson 1/vedio1.mp4){width=100%} -->
+<!--![](figures/Lesson 1/vedio1.mp4){width=100%}-->
 
 <!-- ![](figures/Lesson 1/GIF.gif){width=100%} -->
 
