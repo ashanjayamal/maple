@@ -17,10 +17,6 @@ github-repo: rstudio/bookdown-demo
 
 # Introduction to Maple
 
-This is temporary file
-
-
-
 ## What is Maple?
 
 - Maple is a Symbolic Computation System or Computer Algebra System which can be used to obtain exact analytical solutions to many mathematical problems, including integrals, systems of equations, differential equations, and problems in linear algebra.
