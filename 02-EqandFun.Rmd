@@ -1,5 +1,6 @@
 # Equations and Functions
 
+
 ## Solving Equations
 
 In general we can solve different types of equations to get an exact solution. The solution may be an integer, a fraction, or it may be an expression. Using Maple we can do the same thing using the `solve` command and obtain an exact solutions for equations and inequalities. 

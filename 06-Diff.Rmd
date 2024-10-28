@@ -83,6 +83,8 @@ Find the derivatives of the following functions with respect to \(x\).
 ## Higher derivatives
 
 Following examples show, how to find higher derivatives of functions.
+
+
 ### Method 1
 
 You can find the second derivative by differentiating twice.

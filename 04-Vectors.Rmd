@@ -24,6 +24,42 @@ Defining a vector with specified elements:
 
 Defining a vector with 3 unspecified elements will gives you a symbolic vector of dimension three.
 
+```
+[> c:=vector(3);
+[> evalm(c); 
+```
+![](figures/Vectors/fig9.png)
+
+
+```
+[> u:=vector([3,-2,0,2,-3]); 
+```
+
+![](figures/Vectors/fig10.png)
+
+
+If a vector `u` is defined, we can access the $n$th element of the vector `u` by the command `u[n]`.
+
+![](figures/Vectors/fig11.png)
+
+We can insert variables as the entries of vectors: 
+
+```
+[> v := vector([x,y,2*x]);  
+[> v[1]+v[3]^2;  
+```
+![](figures/Vectors/fig12.png)
+
+
+Given below is the function form of the "vector" command.
+
+```
+[> w := vector(7, i -> i^2-1);
+```
+
+![](figures/Vectors/fig13.png)
+
+This $w$ vector contains the $n^2-1$ form of the first seven positive integers. $n \in \mathbb{N}$.
 
 ## Vector Algebra
 Maple can handle most of the common operations with vectors. 
@@ -105,17 +141,98 @@ There are two methods to get the scalar triple product.
 
 ### Magnitude of a vector 
 
+- Method I
+```
+[> u:=vector([2,-1,1]); 
+[> sqrt(dotprod(u,u)); 
+[> sqrt(dotprod(v,v));
+```
+![](figures/Vectors/fig14.png)
+
+- Method II
+
+```
+> norm(v,2); 
+> norm(v,2); 
+```
+![](figures/Vectors/fig15.png)
+
+Using the `norm` command you can find the *unit vector* corresponding to a given vector. 
+
+```
+[> u/norm(u,2); 
+[> evalm(%); 
+[> evalm(v/norm(v,2));
+```
+
+![](figures/Vectors/fig16.png)
+
+
+
 ### Angle between two vectors
 
+```
+[> angle(u,v);
+[> evalf(%);
+```
+![](figures/Vectors/fig17.png)
 
-### Line joining two points 
+*Note that, in here the angle is given in radians.*
+
+### Line joining two points and mid point of line
 
 Let $p,q$  be two position vectors.  Then you can find the vector representing the line joining these two points by evaluating $q-p$. 
 
+```
+[> p:=vector([3,-1,2]); 
+[> q:=vector([5,7,1]); 
+[> evalm(q-p); 
+```
+
+![](figures/Vectors/fig18.png)
+
+You can find the midpoint of the line as well. 
+
+```
+[> evalm((q+p)/2); 
+```
+
+![](figures/Vectors/fig19.png)
 
 ## Geometrical representation of vectors
 
 Vectors are determined by both a magnitude and a direction and they are represented geometrically in 2 or 3 dimensional space as directed line segments or arrows. We can represent vectors graphically using the `arrow` and `display` commands from the plots package. 
+
+```
+[> restart;with(plots): 
+````
+
+The arrow command has the following format:
+
+`arrow(vector,options)` or `arrow(base,direction,options)` \ 
+For the options, you may use a bigger width if the arrow appears to be too small. 
+
+
+For example, in 2-dimensional plane plot the vector $\vec u=(3,5)$
+
+```
+> arrow([3,5],width=0.1,head_length=0.5,axes=normal,color=red); 
+```
+
+![](figures/Vectors/fig4.jpg)
+
+For example, in 3-dimensional plane plot the vector $\vec v = (1,−2,4)$
+
+```
+[> v:=vector([1,-2,4]); 
+[> V1:=arrow(v):  
+[> display(V1,axes=normal,labels=[x,y,z]); 
+```
+![](figures/Vectors/fig20.png)
+![](figures/Vectors/fig5.jpg)
+
+
+The angle of vision can be moved by clicking on the graph and moving your mouse (with the button still pressed down). 
 
 ### Sum of two vectors 
 

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lesson 5 Vectors | Maple</title>
+  <meta name="description" content="This is for sharing notes with every one." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lesson 5 Vectors | Maple" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is for sharing notes with every one." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lesson 5 Vectors | Maple" />
+  
+  <meta name="twitter:description" content="This is for sharing notes with every one." />
+  
+
+<meta name="author" content="Ashan J" />
+
+
+<meta name="date" content="2024-10-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="plots.html"/>
+<link rel="next" href="set-theroy.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Maple</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to Maple</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-is-maple"><i class="fa fa-check"></i><b>1.1</b> What is Maple?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#using-a-maple-worksheet"><i class="fa fa-check"></i><b>1.2</b> Using a Maple Worksheet</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#entering-maple-commands"><i class="fa fa-check"></i><b>1.3</b> Entering Maple Commands</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#arithmetic-operations"><i class="fa fa-check"></i><b>1.4</b> Arithmetic operations</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#operations"><i class="fa fa-check"></i><b>1.5</b> Operations</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i><b>1.5.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#shortcut-to-retyping"><i class="fa fa-check"></i><b>1.6</b> Shortcut to retyping</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#fractions-and-decimals"><i class="fa fa-check"></i><b>1.7</b> Fractions and Decimals</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#roots"><i class="fa fa-check"></i><b>1.8</b> Roots</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#exercise"><i class="fa fa-check"></i><b>1.8.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#pi-vs-pi"><i class="fa fa-check"></i><b>1.9</b> Pi Vs pi</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#rational-numbers"><i class="fa fa-check"></i><b>1.10</b> Rational Numbers</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="index.html"><a href="index.html#exercises-1"><i class="fa fa-check"></i><b>1.10.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#complex-numbers"><i class="fa fa-check"></i><b>1.11</b> Complex Numbers</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="index.html"><a href="index.html#exercise-1"><i class="fa fa-check"></i><b>1.11.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#maple-help"><i class="fa fa-check"></i><b>1.12</b> MAPLE Help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basic-algebra.html"><a href="basic-algebra.html"><i class="fa fa-check"></i><b>2</b> Basic Algebra</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basic-algebra.html"><a href="basic-algebra.html#variables-and-expressions"><i class="fa fa-check"></i><b>2.1</b> Variables and Expressions</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="basic-algebra.html"><a href="basic-algebra.html#exercise-2"><i class="fa fa-check"></i><b>2.1.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basic-algebra.html"><a href="basic-algebra.html#assigning-values-to-variables"><i class="fa fa-check"></i><b>2.2</b> Assigning values to variables</a></li>
+<li class="chapter" data-level="2.3" data-path="basic-algebra.html"><a href="basic-algebra.html#substituting-values"><i class="fa fa-check"></i><b>2.3</b> Substituting Values</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-algebra.html"><a href="basic-algebra.html#factoring-expressions"><i class="fa fa-check"></i><b>2.4</b> Factoring expressions</a></li>
+<li class="chapter" data-level="2.5" data-path="basic-algebra.html"><a href="basic-algebra.html#expanding-expressions"><i class="fa fa-check"></i><b>2.5</b> Expanding expressions</a></li>
+<li class="chapter" data-level="2.6" data-path="basic-algebra.html"><a href="basic-algebra.html#finding-the-degree-and-leading-coefficient-of-polynomials"><i class="fa fa-check"></i><b>2.6</b> Finding the degree and leading coefficient of polynomials</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="basic-algebra.html"><a href="basic-algebra.html#exercise-3"><i class="fa fa-check"></i><b>2.6.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="basic-algebra.html"><a href="basic-algebra.html#simplifying-expressions"><i class="fa fa-check"></i><b>2.7</b> Simplifying Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="equations-and-functions.html"><a href="equations-and-functions.html"><i class="fa fa-check"></i><b>3</b> Equations and Functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="equations-and-functions.html"><a href="equations-and-functions.html#solving-equations"><i class="fa fa-check"></i><b>3.1</b> Solving Equations</a></li>
+<li class="chapter" data-level="3.2" data-path="equations-and-functions.html"><a href="equations-and-functions.html#equations-with-multiple-unknowns"><i class="fa fa-check"></i><b>3.2</b> Equations with multiple unknowns</a></li>
+<li class="chapter" data-level="3.3" data-path="equations-and-functions.html"><a href="equations-and-functions.html#functions"><i class="fa fa-check"></i><b>3.3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="equations-and-functions.html"><a href="equations-and-functions.html#defining-functions"><i class="fa fa-check"></i><b>3.3.1</b> Defining functions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="equations-and-functions.html"><a href="equations-and-functions.html#function-operations-and-compositions"><i class="fa fa-check"></i><b>3.3.2</b> Function Operations and Compositions</a></li>
+<li class="chapter" data-level="3.3.3" data-path="equations-and-functions.html"><a href="equations-and-functions.html#composition-of-functions"><i class="fa fa-check"></i><b>3.3.3</b> Composition of functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="equations-and-functions.html"><a href="equations-and-functions.html#trigonometry-with-maple"><i class="fa fa-check"></i><b>3.4</b> Trigonometry with Maple</a></li>
+<li class="chapter" data-level="3.5" data-path="equations-and-functions.html"><a href="equations-and-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>3.5</b> Inverse trigonometric functions</a></li>
+<li class="chapter" data-level="3.6" data-path="equations-and-functions.html"><a href="equations-and-functions.html#exercise-4"><i class="fa fa-check"></i><b>3.6</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>4</b> Plots</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="plots.html"><a href="plots.html#basic-graphs"><i class="fa fa-check"></i><b>4.1</b> Basic Graphs</a></li>
+<li class="chapter" data-level="4.2" data-path="plots.html"><a href="plots.html#multiple-graphs"><i class="fa fa-check"></i><b>4.2</b> Multiple Graphs</a></li>
+<li class="chapter" data-level="4.3" data-path="plots.html"><a href="plots.html#discontinuous-graphs"><i class="fa fa-check"></i><b>4.3</b> Discontinuous Graphs</a></li>
+<li class="chapter" data-level="4.4" data-path="plots.html"><a href="plots.html#graphing-lines"><i class="fa fa-check"></i><b>4.4</b> Graphing Lines</a></li>
+<li class="chapter" data-level="4.5" data-path="plots.html"><a href="plots.html#plotting-piecewise-continuous-functions"><i class="fa fa-check"></i><b>4.5</b> Plotting Piecewise Continuous Functions</a></li>
+<li class="chapter" data-level="4.6" data-path="plots.html"><a href="plots.html#finding-one-to-one-functions"><i class="fa fa-check"></i><b>4.6</b> Finding one to one functions</a></li>
+<li class="chapter" data-level="4.7" data-path="plots.html"><a href="plots.html#graphing-the-inverse"><i class="fa fa-check"></i><b>4.7</b> Graphing the inverse</a></li>
+<li class="chapter" data-level="4.8" data-path="plots.html"><a href="plots.html#solving-system-of-equations-graphically"><i class="fa fa-check"></i><b>4.8</b> Solving system of equations graphically</a></li>
+<li class="chapter" data-level="4.9" data-path="plots.html"><a href="plots.html#implicit-plot"><i class="fa fa-check"></i><b>4.9</b> Implicit plot</a></li>
+<li class="chapter" data-level="4.10" data-path="plots.html"><a href="plots.html#d-plots"><i class="fa fa-check"></i><b>4.10</b> 3D plots</a></li>
+<li class="chapter" data-level="4.11" data-path="plots.html"><a href="plots.html#exercise-5"><i class="fa fa-check"></i><b>4.11</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>5</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="vectors.html"><a href="vectors.html#defining-a-vector"><i class="fa fa-check"></i><b>5.1</b> Defining a vector</a></li>
+<li class="chapter" data-level="5.2" data-path="vectors.html"><a href="vectors.html#vector-algebra"><i class="fa fa-check"></i><b>5.2</b> Vector Algebra</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="vectors.html"><a href="vectors.html#vector-addition"><i class="fa fa-check"></i><b>5.2.1</b> Vector addition</a></li>
+<li class="chapter" data-level="5.2.2" data-path="vectors.html"><a href="vectors.html#multiplication-by-a-scalar"><i class="fa fa-check"></i><b>5.2.2</b> Multiplication by a scalar</a></li>
+<li class="chapter" data-level="5.2.3" data-path="vectors.html"><a href="vectors.html#dot-product-and-cross-product"><i class="fa fa-check"></i><b>5.2.3</b> Dot product and cross product</a></li>
+<li class="chapter" data-level="5.2.4" data-path="vectors.html"><a href="vectors.html#scalar-triple-product"><i class="fa fa-check"></i><b>5.2.4</b> Scalar triple product</a></li>
+<li class="chapter" data-level="5.2.5" data-path="vectors.html"><a href="vectors.html#magnitude-of-a-vector"><i class="fa fa-check"></i><b>5.2.5</b> Magnitude of a vector</a></li>
+<li class="chapter" data-level="5.2.6" data-path="vectors.html"><a href="vectors.html#angle-between-two-vectors"><i class="fa fa-check"></i><b>5.2.6</b> Angle between two vectors</a></li>
+<li class="chapter" data-level="5.2.7" data-path="vectors.html"><a href="vectors.html#line-joining-two-points-and-mid-point-of-line"><i class="fa fa-check"></i><b>5.2.7</b> Line joining two points and mid point of line</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="vectors.html"><a href="vectors.html#geometrical-representation-of-vectors"><i class="fa fa-check"></i><b>5.3</b> Geometrical representation of vectors</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="vectors.html"><a href="vectors.html#sum-of-two-vectors"><i class="fa fa-check"></i><b>5.3.1</b> Sum of two vectors</a></li>
+<li class="chapter" data-level="5.3.2" data-path="vectors.html"><a href="vectors.html#difference-of-two-vectors"><i class="fa fa-check"></i><b>5.3.2</b> Difference of two vectors</a></li>
+<li class="chapter" data-level="5.3.3" data-path="vectors.html"><a href="vectors.html#multiplying-a-vector-by-a-scalar"><i class="fa fa-check"></i><b>5.3.3</b> Multiplying a vector by a scalar</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="vectors.html"><a href="vectors.html#exercises-2"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="set-theroy.html"><a href="set-theroy.html"><i class="fa fa-check"></i><b>6</b> Set Theroy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="set-theroy.html"><a href="set-theroy.html#set-definition-and-cardinity"><i class="fa fa-check"></i><b>6.1</b> Set Definition and Cardinity</a></li>
+<li class="chapter" data-level="6.2" data-path="set-theroy.html"><a href="set-theroy.html#checking-for-the-set-membership"><i class="fa fa-check"></i><b>6.2</b> Checking for the set membership</a></li>
+<li class="chapter" data-level="6.3" data-path="set-theroy.html"><a href="set-theroy.html#set-operations"><i class="fa fa-check"></i><b>6.3</b> Set Operations</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="set-theroy.html"><a href="set-theroy.html#subsets"><i class="fa fa-check"></i><b>6.3.1</b> Subsets</a></li>
+<li class="chapter" data-level="6.3.2" data-path="set-theroy.html"><a href="set-theroy.html#union"><i class="fa fa-check"></i><b>6.3.2</b> Union</a></li>
+<li class="chapter" data-level="6.3.3" data-path="set-theroy.html"><a href="set-theroy.html#intersection"><i class="fa fa-check"></i><b>6.3.3</b> Intersection</a></li>
+<li class="chapter" data-level="6.3.4" data-path="set-theroy.html"><a href="set-theroy.html#minus"><i class="fa fa-check"></i><b>6.3.4</b> Minus</a></li>
+<li class="chapter" data-level="6.3.5" data-path="set-theroy.html"><a href="set-theroy.html#power-set"><i class="fa fa-check"></i><b>6.3.5</b> Power set</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="set-theroy.html"><a href="set-theroy.html#defining-new-functions-to-set-theory-operations"><i class="fa fa-check"></i><b>6.4</b> Defining new functions to set theory operations</a></li>
+<li class="chapter" data-level="6.5" data-path="set-theroy.html"><a href="set-theroy.html#exercise-6"><i class="fa fa-check"></i><b>6.5</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="differential-equations.html"><a href="differential-equations.html"><i class="fa fa-check"></i><b>7</b> Differential Equations</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="differential-equations.html"><a href="differential-equations.html#introduction-to-differential-equations"><i class="fa fa-check"></i><b>7.1</b> Introduction to differential equations</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="differential-equations.html"><a href="differential-equations.html#exercise-7"><i class="fa fa-check"></i><b>7.1.1</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="differential-equations.html"><a href="differential-equations.html#higher-derivatives"><i class="fa fa-check"></i><b>7.2</b> Higher derivatives</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="differential-equations.html"><a href="differential-equations.html#method-1"><i class="fa fa-check"></i><b>7.2.1</b> Method 1</a></li>
+<li class="chapter" data-level="7.2.2" data-path="differential-equations.html"><a href="differential-equations.html#method-2"><i class="fa fa-check"></i><b>7.2.2</b> Method 2</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="differential-equations.html"><a href="differential-equations.html#homogenous-equations"><i class="fa fa-check"></i><b>7.3</b> Homogenous Equations</a></li>
+<li class="chapter" data-level="7.4" data-path="differential-equations.html"><a href="differential-equations.html#solving-differential-equations"><i class="fa fa-check"></i><b>7.4</b> Solving Differential Equations</a></li>
+<li class="chapter" data-level="7.5" data-path="differential-equations.html"><a href="differential-equations.html#direction-fields"><i class="fa fa-check"></i><b>7.5</b> Direction Fields</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="differential-equations.html"><a href="differential-equations.html#exercise-8"><i class="fa fa-check"></i><b>7.5.1</b> Exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html"><i class="fa fa-check"></i><b>8</b> Basic of Number Theory</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#prime-numbers-factoring-and-divisibility"><i class="fa fa-check"></i><b>8.1</b> Prime numbers, Factoring and Divisibility</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#ithprimen"><i class="fa fa-check"></i><b>8.1.1</b> <code>ithprime(n)</code></a></li>
+<li class="chapter" data-level="8.1.2" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#isprimen"><i class="fa fa-check"></i><b>8.1.2</b> <code>isprime(n)</code></a></li>
+<li class="chapter" data-level="8.1.3" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#nextprimen"><i class="fa fa-check"></i><b>8.1.3</b> <code>nextprime(n)</code></a></li>
+<li class="chapter" data-level="8.1.4" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#prevprimen"><i class="fa fa-check"></i><b>8.1.4</b> <code>prevprime(n)</code></a></li>
+<li class="chapter" data-level="8.1.5" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#ifactorn"><i class="fa fa-check"></i><b>8.1.5</b> <code>ifactor(n)</code></a></li>
+<li class="chapter" data-level="8.1.6" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#iremmn"><i class="fa fa-check"></i><b>8.1.6</b> <code>irem(m,n)</code></a></li>
+<li class="chapter" data-level="8.1.7" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#iquomn"><i class="fa fa-check"></i><b>8.1.7</b> <code>iquo(m,n)</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#summation"><i class="fa fa-check"></i><b>8.2</b> Summation</a></li>
+<li class="chapter" data-level="8.3" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#theory-of-congrunce"><i class="fa fa-check"></i><b>8.3</b> Theory of Congrunce</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#integer-modulo-n"><i class="fa fa-check"></i><b>8.3.1</b> Integer Modulo n</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#complete-square"><i class="fa fa-check"></i><b>8.4</b> Complete Square</a></li>
+<li class="chapter" data-level="8.5" data-path="basic-of-number-theory.html"><a href="basic-of-number-theory.html#prime-numbers"><i class="fa fa-check"></i><b>8.5</b> Prime Numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="basic-programming.html"><a href="basic-programming.html"><i class="fa fa-check"></i><b>9</b> Basic Programming</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="basic-programming.html"><a href="basic-programming.html#simple-procedures"><i class="fa fa-check"></i><b>9.1</b> Simple Procedures</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="basic-programming.html"><a href="basic-programming.html#section"><i class="fa fa-check"></i><b>9.1.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="basic-programming.html"><a href="basic-programming.html#conditional-statements"><i class="fa fa-check"></i><b>9.2</b> Conditional Statements</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="matrices.html"><a href="matrices.html"><i class="fa fa-check"></i><b>10</b> Matrices</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="matrices.html"><a href="matrices.html#defining-matrices"><i class="fa fa-check"></i><b>10.1</b> Defining matrices</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="matrices.html"><a href="matrices.html#addition-and-scalar-multiplication"><i class="fa fa-check"></i><b>10.1.1</b> Addition and Scalar Multiplication</a></li>
+<li class="chapter" data-level="10.1.2" data-path="matrices.html"><a href="matrices.html#matrix-multiplication"><i class="fa fa-check"></i><b>10.1.2</b> Matrix Multiplication</a></li>
+<li class="chapter" data-level="10.1.3" data-path="matrices.html"><a href="matrices.html#transpose"><i class="fa fa-check"></i><b>10.1.3</b> Transpose</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="matrices.html"><a href="matrices.html#row-opreations"><i class="fa fa-check"></i><b>10.2</b> Row Opreations</a></li>
+<li class="chapter" data-level="10.3" data-path="matrices.html"><a href="matrices.html#determinanat-of-matrix"><i class="fa fa-check"></i><b>10.3</b> Determinanat of Matrix</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="matrices.html"><a href="matrices.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>10.3.1</b> Inverse of a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="matrices.html"><a href="matrices.html#exercise-9"><i class="fa fa-check"></i><b>10.4</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html"><i class="fa fa-check"></i><b>11</b> System of Linear Equations and Matrices</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#augment-of-a-matrix"><i class="fa fa-check"></i><b>11.1</b> Augment of a matrix</a></li>
+<li class="chapter" data-level="11.2" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#solving-linear-systems"><i class="fa fa-check"></i><b>11.2</b> Solving Linear Systems</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-i"><i class="fa fa-check"></i><b>11.2.1</b> Method I</a></li>
+<li class="chapter" data-level="11.2.2" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-ii"><i class="fa fa-check"></i><b>11.2.2</b> Method II</a></li>
+<li class="chapter" data-level="11.2.3" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-iii"><i class="fa fa-check"></i><b>11.2.3</b> Method III</a></li>
+<li class="chapter" data-level="11.2.4" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-iv"><i class="fa fa-check"></i><b>11.2.4</b> Method IV</a></li>
+<li class="chapter" data-level="11.2.5" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#method-v"><i class="fa fa-check"></i><b>11.2.5</b> Method V</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="system-of-linear-equations-and-matrices.html"><a href="system-of-linear-equations-and-matrices.html#exercise-10"><i class="fa fa-check"></i><b>11.3</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="intergration.html"><a href="intergration.html"><i class="fa fa-check"></i><b>12</b> Intergration</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="intergration.html"><a href="intergration.html#indefinite-integration"><i class="fa fa-check"></i><b>12.1</b> Indefinite Integration</a></li>
+<li class="chapter" data-level="12.2" data-path="intergration.html"><a href="intergration.html#definite-integration"><i class="fa fa-check"></i><b>12.2</b> Definite Integration</a></li>
+<li class="chapter" data-level="12.3" data-path="intergration.html"><a href="intergration.html#integration-by-parts"><i class="fa fa-check"></i><b>12.3</b> Integration by Parts</a></li>
+<li class="chapter" data-level="12.4" data-path="intergration.html"><a href="intergration.html#substitutions"><i class="fa fa-check"></i><b>12.4</b> Substitutions</a></li>
+<li class="chapter" data-level="12.5" data-path="intergration.html"><a href="intergration.html#multiple-integration"><i class="fa fa-check"></i><b>12.5</b> Multiple Integration</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="intergration.html"><a href="intergration.html#double-integration-area-calculation"><i class="fa fa-check"></i><b>12.5.1</b> Double integration (Area calculation)</a></li>
+<li class="chapter" data-level="12.5.2" data-path="intergration.html"><a href="intergration.html#triple-integration-volume-calculation"><i class="fa fa-check"></i><b>12.5.2</b> Triple integration (Volume Calculation)</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="intergration.html"><a href="intergration.html#exercise-11"><i class="fa fa-check"></i><b>12.6</b> Exercise</a></li>
+<li class="chapter" data-level="12.7" data-path="intergration.html"><a href="intergration.html#computing-the-area-from-the-integral"><i class="fa fa-check"></i><b>12.7</b> Computing the area from the integral</a></li>
+<li class="chapter" data-level="12.8" data-path="intergration.html"><a href="intergration.html#exercise-12"><i class="fa fa-check"></i><b>12.8</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html"><i class="fa fa-check"></i><b>13</b> Vector Space and Vector Calculus</a></li>
+<li class="divider"></li>
+<li><a href="https://ashanjayamal.github.io/academicpages/" target="blank">Ashan Jayamal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Maple</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vectors" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Lesson 5</span> Vectors<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="defining-a-vector" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Defining a vector<a href="vectors.html#defining-a-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A vector in Maple is a one-dimensional array. It is part of the <code>linalg</code> package. There are two commands for entering a vector in Maple. Those are <code>array</code> and <code>vector</code>.</p>
+<pre><code>[&gt; with(linalg): 
+[&gt; u:=array([a,b,c]); 
+[&gt; v:=vector([a,b,c]); 
+[&gt; w:=&lt;a|b|c&gt;; </code></pre>
+<p><img src="figures/Vectors/fig1.png" /></p>
+<p>Defining a vector with specified elements:</p>
+<pre><code>[&gt; a:=vector([1,2,3]); 
+[&gt; b:=vector(3,[-1,2,3]);</code></pre>
+<p><img src="figures/Vectors/fig2.png" /></p>
+<p>Defining a vector with 3 unspecified elements will gives you a symbolic vector of dimension three.</p>
+<pre><code>[&gt; c:=vector(3);
+[&gt; evalm(c); </code></pre>
+<p><img src="figures/Vectors/fig9.png" /></p>
+<pre><code>[&gt; u:=vector([3,-2,0,2,-3]); </code></pre>
+<p><img src="figures/Vectors/fig10.png" /></p>
+<p>If a vector <code>u</code> is defined, we can access the <span class="math inline">\(n\)</span>th element of the vector <code>u</code> by the command <code>u[n]</code>.</p>
+<p><img src="figures/Vectors/fig11.png" /></p>
+<p>We can insert variables as the entries of vectors:</p>
+<pre><code>[&gt; v := vector([x,y,2*x]);  
+[&gt; v[1]+v[3]^2;  </code></pre>
+<p><img src="figures/Vectors/fig12.png" /></p>
+<p>Given below is the function form of the “vector” command.</p>
+<pre><code>[&gt; w := vector(7, i -&gt; i^2-1);</code></pre>
+<p><img src="figures/Vectors/fig13.png" /></p>
+<p>This <span class="math inline">\(w\)</span> vector contains the <span class="math inline">\(n^2-1\)</span> form of the first seven positive integers. <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+</div>
+<div id="vector-algebra" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Vector Algebra<a href="vectors.html#vector-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Maple can handle most of the common operations with vectors.</p>
+<div id="vector-addition" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Vector addition<a href="vectors.html#vector-addition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The commonly used algebra operations on vectors are as follows:</p>
+<pre><code>[&gt; u:=vector([2,-1,1]); 
+[&gt; v:=vector([0,3,-2]); 
+[&gt; u+v; </code></pre>
+<p><img src="figures/Vectors/fig3.png" /></p>
+<p>Notice that just typing <span class="math inline">\(u+v\)</span> doesn’t work the way you expect. To see the entries you need to use <code>evalm</code> which stands for Evaluate as a Matrix. So now:</p>
+<pre><code>&gt; evalm(u+v); 
+&gt; evalm(u-v); </code></pre>
+<p><img src="figures/Vectors/fig4.png" /></p>
+</div>
+<div id="multiplication-by-a-scalar" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Multiplication by a scalar<a href="vectors.html#multiplication-by-a-scalar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>[&gt; evalm(2*v); 
+[&gt; evalm(3*u+2*v); </code></pre>
+<p><img src="figures/Vectors/fig5.png" /></p>
+</div>
+<div id="dot-product-and-cross-product" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Dot product and cross product<a href="vectors.html#dot-product-and-cross-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To do the dot and cross products, you have the commands <code>dotprod</code> and <code>crossprod</code>. But <strong>you must load the</strong> <code>linalg</code> <strong>package</strong> before entering those commands.</p>
+<p>But you must load the ‘linalg’ package before entering those commands.</p>
+<pre><code>[&gt; with(linalg): 
+[&gt; dotprod(u,v); 
+[&gt; crossprod(u,v); </code></pre>
+<p><img src="figures/Vectors/fig6.png" /></p>
+<pre><code>[&gt; crossprod([1,2,3],[-2,0,1]); </code></pre>
+<p><img src="figures/Vectors/fig6.png" /></p>
+</div>
+<div id="scalar-triple-product" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Scalar triple product<a href="vectors.html#scalar-triple-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are two methods to get the scalar triple product.</p>
+<pre><code>[&gt; u:=vector([3,-1,2]); 
+[&gt; v:=vector([5,7,1]); 
+[&gt; w:=vector([0,1,2]);</code></pre>
+<ul>
+<li><em>Method I</em></li>
+</ul>
+<pre><code> dotprod(u,crossprod(v,w)); </code></pre>
+<ul>
+<li><em>Method II</em></li>
+</ul>
+<pre><code> det(augment(u,v,w)); </code></pre>
+<p><img src="figures/Vectors/fig8.png" /></p>
+</div>
+<div id="magnitude-of-a-vector" class="section level3 hasAnchor" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Magnitude of a vector<a href="vectors.html#magnitude-of-a-vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Method I</li>
+</ul>
+<pre><code>[&gt; u:=vector([2,-1,1]); 
+[&gt; sqrt(dotprod(u,u)); 
+[&gt; sqrt(dotprod(v,v));</code></pre>
+<p><img src="figures/Vectors/fig14.png" /></p>
+<ul>
+<li>Method II</li>
+</ul>
+<pre><code>&gt; norm(v,2); 
+&gt; norm(v,2); </code></pre>
+<p><img src="figures/Vectors/fig15.png" /></p>
+<p>Using the <code>norm</code> command you can find the <em>unit vector</em> corresponding to a given vector.</p>
+<pre><code>[&gt; u/norm(u,2); 
+[&gt; evalm(%); 
+[&gt; evalm(v/norm(v,2));</code></pre>
+<p><img src="figures/Vectors/fig16.png" /></p>
+</div>
+<div id="angle-between-two-vectors" class="section level3 hasAnchor" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Angle between two vectors<a href="vectors.html#angle-between-two-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>[&gt; angle(u,v);
+[&gt; evalf(%);</code></pre>
+<p><img src="figures/Vectors/fig17.png" /></p>
+<p><em>Note that, in here the angle is given in radians.</em></p>
+</div>
+<div id="line-joining-two-points-and-mid-point-of-line" class="section level3 hasAnchor" number="5.2.7">
+<h3><span class="header-section-number">5.2.7</span> Line joining two points and mid point of line<a href="vectors.html#line-joining-two-points-and-mid-point-of-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(p,q\)</span> be two position vectors. Then you can find the vector representing the line joining these two points by evaluating <span class="math inline">\(q-p\)</span>.</p>
+<pre><code>[&gt; p:=vector([3,-1,2]); 
+[&gt; q:=vector([5,7,1]); 
+[&gt; evalm(q-p); </code></pre>
+<p><img src="figures/Vectors/fig18.png" /></p>
+<p>You can find the midpoint of the line as well.</p>
+<pre><code>[&gt; evalm((q+p)/2); </code></pre>
+<p><img src="figures/Vectors/fig19.png" /></p>
+</div>
+</div>
+<div id="geometrical-representation-of-vectors" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Geometrical representation of vectors<a href="vectors.html#geometrical-representation-of-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vectors are determined by both a magnitude and a direction and they are represented geometrically in 2 or 3 dimensional space as directed line segments or arrows. We can represent vectors graphically using the <code>arrow</code> and <code>display</code> commands from the plots package.</p>
+<pre><code>[&gt; restart;with(plots): </code></pre>
+<p>The arrow command has the following format:</p>
+<p><code>arrow(vector,options)</code> or <code>arrow(base,direction,options)</code>  
+For the options, you may use a bigger width if the arrow appears to be too small.</p>
+<p>For example, in 2-dimensional plane plot the vector <span class="math inline">\(\vec u=(3,5)\)</span></p>
+<pre><code>&gt; arrow([3,5],width=0.1,head_length=0.5,axes=normal,color=red); </code></pre>
+<p><img src="figures/Vectors/fig4.jpg" /></p>
+<p>For example, in 3-dimensional plane plot the vector <span class="math inline">\(\vec v = (1,−2,4)\)</span></p>
+<pre><code>[&gt; v:=vector([1,-2,4]); 
+[&gt; V1:=arrow(v):  
+[&gt; display(V1,axes=normal,labels=[x,y,z]); </code></pre>
+<p><img src="figures/Vectors/fig20.png" />
+<img src="figures/Vectors/fig5.jpg" /></p>
+<p>The angle of vision can be moved by clicking on the graph and moving your mouse (with the button still pressed down).</p>
+<div id="sum-of-two-vectors" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Sum of two vectors<a href="vectors.html#sum-of-two-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The sum of two vectors <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span>, written <span class="math inline">\(v_1+v_2\)</span> is the vector geometrically determined as follows.</p>
+<pre><code>[&gt; restart;with(plots): 
+[&gt; v1:=arrow([3,5],width=0.1,color=blue): 
+[&gt; v2:=arrow([-1,2.5],width=0.1,color=red): 
+[&gt; sumvectors:=arrow([3,5]+[-1,2.5],width=0.2,color=green): 
+[&gt; display({v1,v2,sumvectors}); </code></pre>
+<p><img src="figures/Vectors/fig1.jpg" /></p>
+</div>
+<div id="difference-of-two-vectors" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Difference of two vectors<a href="vectors.html#difference-of-two-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> are any two vectors, we define the difference of the vectors to be the vector <span class="math inline">\(v_1-v_2\)</span> and we can construct it by plotting the sum of the vector <span class="math inline">\(v_1\)</span> and the vector <span class="math inline">\(-v_2\)</span>.</p>
+<pre><code>[&gt; restart;with(plots): 
+[&gt; v1:=arrow([3,5],width=0.1,color=blue): 
+[&gt; v2:=arrow([1,-2.5],width=0.1,color=red): 
+[&gt; sumvectors:=arrow([3,5]+[1,-2.5],width=0.2,color=green): 
+[&gt; display({v1,v2,sumvectors});</code></pre>
+<p><img src="figures/Vectors/fig2.jpg" /></p>
+</div>
+<div id="multiplying-a-vector-by-a-scalar" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Multiplying a vector by a scalar<a href="vectors.html#multiplying-a-vector-by-a-scalar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Multiplying a vector by a scalar If <span class="math inline">\(v\)</span> is a nonzero vector and<span class="math inline">\(c\)</span> is a nonzero scalar, we define the product of <span class="math inline">\(c\)</span> and <span class="math inline">\(v\)</span>, denoted <span class="math inline">\(v\)</span>, to be the vector whose length is <span class="math inline">\(|c|\)</span> times the length of <span class="math inline">\(v\)</span> and whose direction is the same
+as that of <span class="math inline">\(v\)</span> if <span class="math inline">\(c &gt; 0\)</span> and opposite to that of <span class="math inline">\(v\)</span> if <span class="math inline">\(c &lt; 0\)</span>.</p>
+<pre><code>[&gt; restart;with(plots): 
+[&gt; v:=arrow([3,5],width=0.5,color=blue): 
+[&gt; v_times_5:=arrow([3*5,5*5],width=0.6,color=green): 
+[&gt; display(v,v_times_5); </code></pre>
+<p><img src="figures/Vectors/fig3.jpg" /></p>
+</div>
+</div>
+<div id="exercises-2" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Exercises<a href="vectors.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Show that the vector <span class="math inline">\(9\mathbf{i} + \mathbf{j} - 6\mathbf{k}\)</span> is perpendicular to the vector <span class="math inline">\(4\mathbf{i} - 6\mathbf{j} + 5\mathbf{k}\)</span>.</p></li>
+<li><p>Find the angle between the vectors <span class="math inline">\(\mathbf{i} - 2\mathbf{j} - 2\mathbf{k}\)</span> and <span class="math inline">\(2\mathbf{i} + \mathbf{j} - 2\mathbf{k}\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(\mathbf{a} \times \mathbf{b}\)</span> and <span class="math inline">\(\mathbf{b} \times \mathbf{a}\)</span> where <span class="math inline">\(\mathbf{a} = 3\mathbf{i} + \mathbf{j} + 2\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{b} = 2\mathbf{i} - 2\mathbf{j} + 4\mathbf{k}\)</span>.</p></li>
+<li><p>Find the area of the triangle whose vertices are <span class="math inline">\(2\mathbf{i} + 3\mathbf{j} - \mathbf{k}\)</span>, <span class="math inline">\(\mathbf{i} - \mathbf{j} + 2\mathbf{k}\)</span>, and <span class="math inline">\(2\mathbf{i} + 2\mathbf{j} + \mathbf{k}\)</span>.</p></li>
+<li><p>Find the area of the triangle whose vertices are <span class="math inline">\(\mathbf{i} + \mathbf{j} + \mathbf{k}\)</span>, <span class="math inline">\(\mathbf{i} + 2\mathbf{j} + 3\mathbf{k}\)</span>, and <span class="math inline">\(2\mathbf{i} + 3\mathbf{j} + \mathbf{k}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\mathbf{a} = 2\mathbf{i} - 3\mathbf{j} + \mathbf{k}\)</span>, <span class="math inline">\(\mathbf{b} = \mathbf{i} - \mathbf{j} + 2\mathbf{k}\)</span>, <span class="math inline">\(\mathbf{c} = 2\mathbf{i} + \mathbf{j} + \mathbf{k}\)</span>, then find:</p>
+<ul>
+<li><span class="math inline">\((\mathbf{a} \times \mathbf{b}) \cdot \mathbf{c}\)</span></li>
+<li><span class="math inline">\((\mathbf{b} \times \mathbf{c}) \cdot \mathbf{a}\)</span></li>
+<li><span class="math inline">\((\mathbf{a} \times \mathbf{b}) \times \mathbf{c}\)</span></li>
+<li><span class="math inline">\((\mathbf{b} \times \mathbf{c}) \times \mathbf{a}\)</span></li>
+</ul></li>
+<li><p>For any vectors <span class="math inline">\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)</span> and any scalar <span class="math inline">\(k\)</span>, prove that:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}\)</span></li>
+<li><span class="math inline">\(k(\mathbf{a} \cdot \mathbf{b}) = (k\mathbf{a}) \cdot \mathbf{b} = \mathbf{a} \cdot (k\mathbf{b})\)</span></li>
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\)</span></li>
+<li><span class="math inline">\(\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a} \times \mathbf{b} + \mathbf{a} \times \mathbf{c}\)</span></li>
+<li><span class="math inline">\(k(\mathbf{a} \times \mathbf{b}) = (k\mathbf{a}) \times \mathbf{b} = \mathbf{a} \times (k\mathbf{b})\)</span></li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="set-theroy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ashanjayamal/maple/edit/BRANCH/04-Vectors.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -5,8 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Maple</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+        <li><a href="https://ashanjayamal.github.io/academicpages/" target="blank">Ashan Jayamal</a></li>
+    edit: https://github.com/ashanjayamal/maple/edit/BRANCH/%s
     download: ["pdf"]
 bookdown::pdf_book:
   includes:
