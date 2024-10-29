@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan J" />
 
 
-<meta name="date" content="2024-10-28" />
+<meta name="date" content="2024-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -244,8 +244,14 @@
 <li class="chapter" data-level="9.4" data-path="basic-programming.html"><a href="basic-programming.html#conditional-statements"><i class="fa fa-check"></i><b>9.4</b> Conditional Statements</a>
 <ul>
 <li class="chapter" data-level="9.4.1" data-path="basic-programming.html"><a href="basic-programming.html#nested-selection-statements"><i class="fa fa-check"></i><b>9.4.1</b> Nested Selection Statements</a></li>
-<li class="chapter" data-level="9.4.2" data-path="basic-programming.html"><a href="basic-programming.html#the-if-operator"><i class="fa fa-check"></i><b>9.4.2</b> The <code>'if'</code> Operator</a></li>
+<li class="chapter" data-level="9.4.2" data-path="basic-programming.html"><a href="basic-programming.html#the-if-operator"><i class="fa fa-check"></i><b>9.4.2</b> The `<code>if</code> Operator</a></li>
 </ul></li>
+<li class="chapter" data-level="9.5" data-path="basic-programming.html"><a href="basic-programming.html#repetition-statement"><i class="fa fa-check"></i><b>9.5</b> Repetition statement</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="basic-programming.html"><a href="basic-programming.html#for-loops"><i class="fa fa-check"></i><b>9.5.1</b> For Loops</a></li>
+<li class="chapter" data-level="9.5.2" data-path="basic-programming.html"><a href="basic-programming.html#while-loop"><i class="fa fa-check"></i><b>9.5.2</b> While Loop</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="basic-programming.html"><a href="basic-programming.html#exercises-3"><i class="fa fa-check"></i><b>9.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="matrices.html"><a href="matrices.html"><i class="fa fa-check"></i><b>10</b> Matrices</a>
 <ul>
@@ -354,7 +360,7 @@ Where there are constants, Parameters other variable around, Maple assume that y
 <p>The <code>intparts</code> command has two arguments: the first is the expression to be anti-differentiated, and the second is the choice for, the piece which is to be differentiated.
 <span class="math display">\[ \int u D(v) dx = uv - \int v D(u) dx \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 12.1  </strong></span>Method of integration by parts to compute <span class="math inline">\(\int x \cos(x)\)</span></p>
+<p><span id="exm:unnamed-chunk-77" class="example"><strong>Example 12.1  </strong></span>Method of integration by parts to compute <span class="math inline">\(\int x \cos(x)\)</span></p>
 </div>
 <pre><code>[&gt; restart;
 [&gt; with(student):
@@ -375,7 +381,7 @@ Where there are constants, Parameters other variable around, Maple assume that y
 <h2><span class="header-section-number">12.4</span> Substitutions<a href="intergration.html#substitutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These are done using the <code>changevar</code> command. Look at the following example.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-72" class="example"><strong>Example 12.2  </strong></span>Evaluate <span class="math inline">\(\int 4 \cos(\sin(x))  dx\)</span> using the substitution, <span class="math inline">\(u=\cos(x)\)</span> .</p>
+<p><span id="exm:unnamed-chunk-78" class="example"><strong>Example 12.2  </strong></span>Evaluate <span class="math inline">\(\int 4 \cos(\sin(x))  dx\)</span> using the substitution, <span class="math inline">\(u=\cos(x)\)</span> .</p>
 </div>
 <pre><code>[&gt; Int(cos(x)^4*sin(x),x)=changevar(u=cos(x),Int(cos(x)^4*sin(x),x),u);</code></pre>
 <p><img src="figures/Lesson%206/fig16.png" /></p>
@@ -418,7 +424,7 @@ To back-substitute, we use the subs command,</p>
 <div id="exercise-11" class="section level2 hasAnchor" number="12.6">
 <h2><span class="header-section-number">12.6</span> Exercise<a href="intergration.html#exercise-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 12.1  </strong></span>Integrate the following expressions,</p>
+<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 12.1  </strong></span>Integrate the following expressions,</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(2x^2 + \frac{x}{2}\)</span></li>
 <li><span class="math inline">\(x^3(3x^2 + 2)^{\frac{5}{3}}\)</span></li>
@@ -426,7 +432,7 @@ To back-substitute, we use the subs command,</p>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 12.2  </strong></span>Find the definite integral of the following over the given intervals,</p>
+<p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 12.2  </strong></span>Find the definite integral of the following over the given intervals,</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(\int_{2}^{10} x^3(3x^2 + 2)^{\frac{5}{3}} \, dx\)</span></li>
 <li><span class="math inline">\(\int_{0}^{\frac{\pi}{2}} \cos(x) \sin(x^2) \, dx\)</span></li>
@@ -435,14 +441,14 @@ To back-substitute, we use the subs command,</p>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 12.3  </strong></span>Use of the method of integration by parts to compute,</p>
+<p><span id="exr:unnamed-chunk-81" class="exercise"><strong>Exercise 12.3  </strong></span>Use of the method of integration by parts to compute,</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(\int x e^{-2x} \, dx\)</span></li>
 <li><span class="math inline">\(\int x \ln(x) \, dx\)</span></li>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-76" class="exercise"><strong>Exercise 12.4  </strong></span>Evaluate the following expressions</p>
+<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 12.4  </strong></span>Evaluate the following expressions</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(\int_{-3}^3 \int_{-3}^3 3x^2 + 5y^2 +4 \, dxdy\)</span></li>
 <li><span class="math inline">\(\int_{-3}^3 \int_{-3}^3 9 \ln(x) - 5y^2 \, dxdy\)</span></li>
@@ -459,7 +465,7 @@ definite integral to ``add things up’’.</p>
 <div id="computing-the-area-from-the-integral" class="section level2 hasAnchor" number="12.7">
 <h2><span class="header-section-number">12.7</span> Computing the area from the integral<a href="intergration.html#computing-the-area-from-the-integral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="example">
-<p><span id="exm:unnamed-chunk-77" class="example"><strong>Example 12.3  </strong></span>Find the area under the curve <span class="math inline">\(x^2\sin(x)\)</span></p>
+<p><span id="exm:unnamed-chunk-83" class="example"><strong>Example 12.3  </strong></span>Find the area under the curve <span class="math inline">\(x^2\sin(x)\)</span></p>
 </div>
 <pre><code>[&gt; int(x^2*sin(x),x=-Pi..Pi);</code></pre>
 <pre><code>[&gt; plot(x^2*sin(x),x=-Pi..Pi);</code></pre>
@@ -467,7 +473,7 @@ definite integral to ``add things up’’.</p>
 <p>`<code>[&gt; a2:=int(x^2*sin(x),x=0..Pi);</code></p>
 <pre><code>[&gt; abs(a1)+a2;</code></pre>
 <div class="example">
-<p><span id="exm:unnamed-chunk-78" class="example"><strong>Example 12.4  </strong></span>Find the area bounded by the curves <span class="math inline">\(−x^2 +4x + 6\)</span> and <span class="math inline">\(\frac{x}{3}+2\)</span></p>
+<p><span id="exm:unnamed-chunk-84" class="example"><strong>Example 12.4  </strong></span>Find the area bounded by the curves <span class="math inline">\(−x^2 +4x + 6\)</span> and <span class="math inline">\(\frac{x}{3}+2\)</span></p>
 </div>
 <pre><code>[&gt; f := x-&gt; -x^2+4*x+6; 
 [&gt; g := x-&gt; x/3+2;
@@ -481,7 +487,7 @@ definite integral to ``add things up’’.</p>
 <pre><code>[&gt; evalf(solve(-x^2+4*x+6-x/3-2,x));</code></pre>
 <pre><code>[&gt; Area:=int(f(x)-g(x),x=-.8798034327..0)+int(f(x)-g(x),x=0..4.546470099);</code></pre>
 <div class="example">
-<p><span id="exm:unnamed-chunk-79" class="example"><strong>Example 12.5  </strong></span>Find the area of the region enclosed between the two curves <span class="math inline">\(f(x)=2x+5\)</span> and <span class="math inline">\(g(x)=x^2+2\)</span> from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=6\)</span>.</p>
+<p><span id="exm:unnamed-chunk-85" class="example"><strong>Example 12.5  </strong></span>Find the area of the region enclosed between the two curves <span class="math inline">\(f(x)=2x+5\)</span> and <span class="math inline">\(g(x)=x^2+2\)</span> from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=6\)</span>.</p>
 </div>
 <pre><code>[&gt; g:=x-&gt;x^2+2;f:=x-&gt;2*x+5;
 [&gt; plot({f(x),g(x)},x=-2..7,color=[red,blue]);</code></pre>
@@ -493,13 +499,13 @@ definite integral to ``add things up’’.</p>
 <div id="exercise-12" class="section level2 hasAnchor" number="12.8">
 <h2><span class="header-section-number">12.8</span> Exercise<a href="intergration.html#exercise-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 12.5  </strong></span>Area under the curve <span class="math inline">\(10 - x^2\)</span> in the interval [0, 4].</p>
+<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 12.5  </strong></span>Area under the curve <span class="math inline">\(10 - x^2\)</span> in the interval [0, 4].</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-81" class="exercise"><strong>Exercise 12.6  </strong></span>Area bounded by the curves <span class="math inline">\(f(x) = \cos(x)\)</span> and <span class="math inline">\(y = \frac{1}{2}\)</span> in the interval 0 to 8.</p>
+<p><span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 12.6  </strong></span>Area bounded by the curves <span class="math inline">\(f(x) = \cos(x)\)</span> and <span class="math inline">\(y = \frac{1}{2}\)</span> in the interval 0 to 8.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 12.7  </strong></span>Area bounded by the curves <span class="math inline">\(f(x) = \frac{1}{4}x^2 - 4\)</span> and <span class="math inline">\(g(x) = \frac{1}{4}x + 1\)</span>.</p>
+<p><span id="exr:unnamed-chunk-88" class="exercise"><strong>Exercise 12.7  </strong></span>Area bounded by the curves <span class="math inline">\(f(x) = \frac{1}{4}x^2 - 4\)</span> and <span class="math inline">\(g(x) = \frac{1}{4}x + 1\)</span>.</p>
 </div>
 
 </div>

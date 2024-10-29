@@ -416,4 +416,220 @@ end proc;
 
  
 
-### The `'if'` Operator
+### The ``if` Operator
+
+
+The operator form 'if' requires three arguments and it returns the evaluation of the second or third argument, depending on the truth value of the first.
+
+
+
+```
+`if` (conditional expr, true expr, false expr)
+```
+
+The first argument must evaluate to true, false, or FAIL. If the first argument evaluates to true, the second argument is evaluated and returned. If the first arguments evaluates to false or FAIL, the third argument is evaluated and returned. When the operator form is used, the name of this function must be enclosed in right single quotes (```) because
+if is a Maple reserved word.
+
+```
+[> b:=4;
+[> `if` (b>5,10,11);
+```
+
+![](figures/program/fig21.png)
+This 'if operator statement is equivalent to the following if statement.
+
+```
+if b>5 then
+  10
+else
+  11
+end if;
+```
+![](figures/program/fig22.png)
+
+## Repetition statement
+
+A loop (repetition statement) executes a section of code multiple times. Maple has two general forms of repetition, statements that you can use to perform looping in procedures. There are several ways to get Maple to perform what is called a "loop".
+
+### For Loops
+
+There are two types of for loops.
+- Until a counter variable value exceeds a limit (for/from loop)
+- For each operand of an expression (for/in loop)
+
+#### For/from loop 
+
+The for/from loop statement repeats a statement sequence until a counter variable value exceeds a limit.
+
+Syntax
+
+```
+[> for counter from intial by increment to final do
+  statement sequence
+end do;
+```
+
+```{example}
+This example shows how we can display numbers using a for loop. If you do want it to print something about what is going on, you can ask for it with a print cornrnand.
+```
+
+```
+[> for i from 1 to 5 do
+     x:=i;
+     print(x);
+end do:
+```
+
+
+![](figures/program/fig23.png)
+> You can use `od` instead of `end do`.
+
+If you use `end do;` instead of `end do:` you will get like a out put as follows.
+
+```
+[> for i from 1 to 5 do
+    x:=i;
+    print(x);
+end do;
+```
+
+![](figures/program/fig24.png)
+
+```{example}
+The following procedure can be used to return a factorial value of a given value.
+```
+
+```
+[> fact:=proc(n)
+  local i, p;
+  p:=1;
+    for i from 1 to n do
+      p:=p*i;
+    end do ;
+end proc;
+
+[> fact(5);
+```
+
+![](figures/program/fig25.png)
+
+```{example}
+The following loop returns the square root of the integers 1 to 5 (inclusive).
+When the value of the counter variable n is strictly greater than 5, Maple exits the loop.
+```
+
+```
+[> for n from 1 to 5 do
+     evalf(sqrt(n)) ;
+end do;
+
+
+[> n;
+```
+
+![](figures/program/fig26.png)
+
+The previous loop is equivalent to the following for/from statement.
+
+```
+[> for n from 1 by 1 to 5 do
+     evalf(sqrt(n));
+end do;
+```
+
+![](figures/program/fig27.png)
+
+
+The by value can be negative. The loop repeats until the value of the counter variable is strictly value.
+
+```
+[> for n from 10 by -1 to 3 do
+    if isprime(n) then
+        print(n)
+    end if;
+end do;
+
+[> n;
+```
+
+![](figures/program/fig28.png)
+
+
+
+#### For/in loop
+
+for/in loop statement repeats a statement sequence for each component (operand) of an expression, for example, thc elements of a list.
+
+
+Syntax
+
+```
+[> for variable in expression do
+      statemnent sequence
+end do;
+```
+
+```{example}
+The following loop returns a floating-point approximation to the `sin` function at the angles (measured in degree) in the list `L`
+```
+
+```
+[> L:=[23.4, 87.2, 43.0,99.7];
+[> for i in L do
+    evalf(sin(i*Pi/180));
+end do;
+```
+
+![](figures/program/fig29.png)
+
+
+
+### While Loop
+
+The while loop repeats a statement sequence until a boolean expression does not hold. (ie. A while loops repeats until its boolean expression conditional expression evaluates to false or FAIL)
+
+
+Syntax
+
+```
+[> while conditional_expression do
+    statment_sequnce
+end do;
+```
+
+
+
+
+```{example}
+.
+```
+
+```
+[> x:= 256;
+[> while x>1 do
+x:=x/4
+end do;
+```
+
+
+```{example}
+The followings loop shows you how convert number 35 in basc 1O to base2 (binary).
+```
+
+```
+[> x:=35:
+[> while x > O do
+    irem(x,2);
+    x:=iquo(x,2);
+end do:
+[> convert(35,binary);
+```
+
+![](figures/program/fig31.png)
+
+## Exercises
+
+l. The ABC super market gives discount for their customers as follows:lf the total amount of the bill is in between 2500 and 5000 they give 10% discount, if the amount of the bill is in between 5000 and 10000 give 15% and bills exceeding 10000 30% discount is given. Write a Maple procedure to calculate the net amount of the bill after entering the total bill.
+
+2. Write a maple program to check a given number is even or odd
+3. Write a maple program to display Pascal triangle.(Hint: use for loops, runs goes to 8th row of the Pascal triangle)
