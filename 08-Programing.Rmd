@@ -1,4 +1,6 @@
 # Basic Programming 
+
+
 ## Simple Procedures
 
 
@@ -162,6 +164,9 @@ end;
 ```
 
 ![](figures/program/fig10.png)
+
+
+
 ```{example}
 The following procedure definition contains two input parameters for the length of sides of a right triangle. It calculates the theta value in degree form.
 ```
@@ -228,17 +233,25 @@ end ;
 
 ## Exercise 01
 
+```{exercise}
+Write Maple procedures to calculate the sum of the squares of two numbers you entered. Hence calculate the sum of the squares of 629 and 1 1 1 1.
+```
 
-1. Write Maple procedures to calculate the sum of the squares of two numbers you entered. Hence calculate the sum of the squares of 629 and 1 1 1 1.
+```{exercise}
+Use Maple to show that the sum of first n positive integers is given by,$\frac{n(n+l)}{2}$
+```
 
-2. Use Maple to show that the sum of first n positive integers is given by,$\frac{n(n+l)}{2}$
-  
-3. Write a maple procedure to check whether a product of two given integers is prime or not. Verify your procedure.
+```{exercise}
+Write a maple procedure to check whether a product of two given integers is prime or not. Verify your procedure.
+```
 
-04. Find the area of a triangle with 3 sides given. $(\text{Area} =\sqrt{s(s-a)(s-b)(s-c)}$ where $s=\frac{a+b+c}{2}$ and $a, b, c$ are the length of the each side of triangle). Find the area of the triangle with each side of $5,7,9$.
+```{exercise}
+Find the area of a triangle with 3 sides given. $(\text{Area} =\sqrt{s(s-a)(s-b)(s-c)}$ where $s=\frac{a+b+c}{2}$ and $a, b, c$ are the length of the each side of triangle). Find the area of the triangle with each side of $5,7,9$.
+```
 
-05. Write a procedure to convert two binary numbers into decimal and return their summation. (try out your procedure with $110010, 11001100$)
-
+```{exercise}
+Write a procedure to convert two binary numbers into decimal and return their summation. (try out your procedure with $110010, 11001100$)
+```
 
 
 ## Conditional Statements
@@ -411,7 +424,7 @@ end proc;
 
 ![](figures/program/fig20.png)
 
-> Note: There is diffrence between `sigma(n)` and `Sigma(n)`
+
 
 
  
@@ -627,9 +640,17 @@ end do:
 
 ![](figures/program/fig31.png)
 
-## Exercises
+## Exercise 2
 
-l. The ABC super market gives discount for their customers as follows:lf the total amount of the bill is in between 2500 and 5000 they give 10% discount, if the amount of the bill is in between 5000 and 10000 give 15% and bills exceeding 10000 30% discount is given. Write a Maple procedure to calculate the net amount of the bill after entering the total bill.
+```{exercise}
+The ABC super market gives discount for their customers as follows:lf the total amount of the bill is in between 2500 and 5000 they give 10% discount, if the amount of the bill is in between 5000 and 10000 give 15% and bills exceeding 10000 30% discount is given. Write a Maple procedure to calculate the net amount of the bill after entering the total bill.
+```
 
-2. Write a maple program to check a given number is even or odd
-3. Write a maple program to display Pascal triangle.(Hint: use for loops, runs goes to 8th row of the Pascal triangle)
+```{exercise}
+Write a maple program to check a given number is even or odd
+```
+
+
+```{exercise}
+Write a maple program to display Pascal triangle.(Hint: use for loops, runs goes to 8th row of the Pascal triangle)
+```

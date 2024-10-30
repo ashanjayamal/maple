@@ -285,23 +285,36 @@ Find the area bounded by the curves \(−x^2 +4x + 6\) and  \(\frac{x}{3}+2\)
 ![](figures/Lesson 6/fig28.png)
 ![](figures/Lesson 6/fig29.jpg)
 
+
+![](figures/Lesson 6/fig34.png)
+First we find $a$ and $b$.
+
+
 ```
 [> a := fsolve(f(x)=g(x),x=-2..0);
 [> b := fsolve(f(x)=g(x),x=4..6);
 [> Area:=int(f(x)-g(x),x=a..b);
 ```
+
+
+![](figures/Lesson 6/fig33.png)
+
+
+
 ![](figures/Lesson 6/fig31.png)
+
+*Alternative Method*
+
+![](figures/Lesson 6/fig35.png)
 
 ```
 [> evalf(solve(-x^2+4*x+6-x/3-2,x));
-```
-```
+
 [> Area:=int(f(x)-g(x),x=-.8798034327..0)+int(f(x)-g(x),x=0..4.546470099);
 ```
 
 ```{example}
 Find the area of the region enclosed between the two curves \(f(x)=2x+5\) and \(g(x)=x^2+2\) from \(x=0\) to \(x=6\).
-
 ```
 
 ```
@@ -310,12 +323,19 @@ Find the area of the region enclosed between the two curves \(f(x)=2x+5\) and \(
 ```
 ![](figures/Lesson 6/fig32.png)
 ![](figures/Lesson 6/fig33.jpg)
+
+![](figures/Lesson 6/fig37.png)
+
 ```
 [> solve(x^2+2-2*x-5,x);
 ```
+
+![](figures/Lesson 6/fig38.png)
+
 ```
 [> Area:=int(f(x)-g(x),x=0..3)+int(g(x)-f(x),x=3..6);
 ```
+
 
 
 

@@ -290,32 +290,45 @@ Also we can define the sequence as a function.
 
 ## Exercise 1
 
-1. find the $gcd$ and $lcm$ of the following pair of numbers.
-  - 1. gcd(143, 227)
-  - 2. gcd(306, 657)
-  - 3. gcd(272, 1479)
-  - 4. gcd(1109, 4999)
-  - 5. lcm(143, 227)
-  - 6. lcm(306, 657)
-  - 7. lcm(272, 1479)
-  - 8. lcm(1109, 4999)
+```{exercise}
+find the $gcd$ and $lcm$ of the following pair of numbers.
 
-2. Check whether the following integers are prime or not.
-  - 1. 509
-  - 2. 701
-  - 3. 1009
-  - 4. 129
-  - 5. 1013
-  - 6. 5478
-  - 7. 256
-  - 8. 17460
+1. $gcd(143, 227)$
+2. $gcd(306, 657)$
+3. $gcd(272, 1479)$
+4. $gcd(1109, 4999)$
+5. $lcm(143, 227)$
+6. $lcm(306, 657)$
+7. $lcm(272, 1479)$
+8. $lcm(1109, 4999)$
+```
 
-3. If a number $n$ is divided by $a$, then $n$ can be written as, $$n = aq + r$$. Find the values of $q$ and $r$ for the given $n$ and $a$ in the following. (See therom \ref{thm:thm1})
-- 1. $n=7842, =12$
-- 2. $n=3S78954, a=55$
-- 3. $n=48795345, a=789$
+```{exercise}
+Check whether the following integers are prime or not.
 
-4. Obtain all the primes between 100 and 200.\
+1. 509
+2. 701
+3. 1009
+4. 129
+5. 1013
+6. 5478
+7. 256
+8. 17460
+```
+
+```{exercise}
+If a number $n$ is divided by $a$, then $n$ can be written as, $$n = aq + r$$. Find the values of $q$ and $r$ for the given $n$ and $a$ in the following. (See therom \ref{thm:thm1})
+
+
+1. $n=7842, =12$
+2. $n=3S78954, a=55$
+3. $n=48795345, a=789$
+```
+
+```{exercise}
+Obtain all the primes between 100 and 200.\
+```
+
 Solution:
 
 ```
@@ -323,26 +336,317 @@ Solution:
 [> seq1
 ```
 
-5. If a integers are relatively prime (coprime) if the greatest common divisor of the values is 1. check the following pair of integers are coprime or not.
+```{exercise}
+If a integers are relatively prime (coprime) if the greatest common divisor of the values is 1. check the following pair of integers are coprime or not.
 
-- 1. 5,8
-- 2. 2,8
-- 3. 14,87
-- 4. 71,91
-- 5. 1578,87236
-- 6.785,569
-
+1. 5,8
+2. 2,8
+3. 14,87
+4. 71,91
+5. 1578,87236
+6. 785,569
+```
 
 
 ## Summation
 
-## Theory of Congrunce
+### `sum(f(k),k=m..n)`
+
+The function `sum(f(k,k=m..n))` computes the sum of the function f(k) where k varies from $m$ to $n$ \(\Sum_{k=m}^n f(k)\)
+
+
+```
+[> sum(r,r=1..n);
+[> factor(%);
+```
+
+![](figures/NumTheory/fig29.png)
+
+```
+[> sum(k,k=0..n-1);
+[> factor(%);
+```
+
+![](figures/NumTheory/fig30.png)
+```
+[> sum(k+1,k=0..n);
+[> factor(%);
+```
+
+![](figures/NumTheory/fig31.png)
+
+
+You can verfy well known follwing results as follows,
+
+$$\sum_{k=O}^\infty \frac{1}{k!}=e^1$$
+$$\sum_{k=1}^\infty \frac{1}{(k-1)!}=e^1$$
+$$\sum_{k=1}^\infty4\frac{(-1)^{(k+1)}}{(2k-1)}=\pi$$
+$$\sum_{r=1}^n r^2 =\frac{1}{6}n(n+1)(2n+1)$$
+Then, 
+$$\sum_{r=1}^{100} r^2 =\frac{1}{6}100(101)(201)=338350$$
+```
+[> sum(1/k!,k=0..infinity);
+[> sum(1/(k-1)!,k=1..infinity);
+[> sum((-1)^(k+1)*4/(2*k-1),k=1..infinity);
+[> sum(r^2,r=1..n);
+[> sum(r^2,r=1..100);
+```
+![](figures/NumTheory/fig32.png)
+
+### `add`
+
+To add a finite sequence of values, the `add` command can be used. (only for finite)
+
+
+```
+[> add(i^2,i=1..5);
+```
+
+![](figures/NumTheory/fig32.png)
+
+```
+[> L:=[seq(i,i=1..5)];
+[> add(i,i=L);
+[> add( i, i in L);
+```
+
+![](figures/NumTheory/fig34.png)
+
+
+
+
+`proc` will help you to  create your own procedure.
+
+```
+[> summation:=proc(n) sum(r,r=1..n); end proc;
+[> summation(15);
+[> summation(100);
+```
+
+![](figures/NumTheory/fig35.png)
+
+
+```{example}
+Using `proc()` show that the square of any integer is either of the form $3k$ or $3k+1$
+```
+
+
+```
+ans:=proc(x) irem(x^2,3); end;
+seq(ans(t),t=1..20);
+```
+
+![](figures/NumTheory/fig36.png)
+
+
+### `sigma(n)`
+The function `sigma(n)` will compute the sum of the positive divisors of $n$.
+
+```
+[> with(numtheory):
+[> divisors(20);
+[> sigma(20);
+[> sigma[1](20);
+```
+
+![](figures/NumTheory/fig37.png)
+
+```
+[> divisors(111);
+[> sigma(111);
+```
+
+
+![](figures/NumTheory/fig38.png)
+
+
+```
+[> sigma(111);
+```
+
+![](figures/NumTheory/fig39.png)
+    
+## Exercise 2
+
+```{exercise}
+Find the remainder upon dividing the sum,\
+$1! + 2! +3! ...+ 99! + 100!$ by $12$.
+```
+
+```{exercise}
+Show the following results.
+
+a) $$ 1+2+3+\cdots n=\frac{n(n+1)}{2}, ~\text{  for all } n\geq 1$$
+b) $$1+3+5+\cdots+ (2n— 1) = n^2,  ~\text{  for all } n\geq 1$$
+c) $$1\cdot 2+2\cdot 3+\cdots+n(n+1) = \frac{n(n+1)(n+2)}{3},  ~\text{  for all } n\geq 1$$
+d) $$1\cdot 3 + 2\cdot 4+ 3\cdot 5+\cdots+n(n+2) = \frac{n(n+1)(2n+7)}{6},  ~\text{  for all } n\geq 1$$
+e) $$1\cdot 1!+2\cdot 2!+3\cdot 3!+n\cdot n!=(n+1)!-1,  ~\text{  for all } n\geq 1$$
+f) $$\frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+\cdots+\frac{n}{2^n}=(n+1)!-1,  ~\text{  for all } n\geq 1$$
+g) $$a^n-1=(a-1)(a^{n-1}+a^{n-2}+\cdots +a+1)$$
+h) $$1^3+2^3+3^3+\cdots+n^3=\left(\frac{n(n+1)}{2}\right)^2$$
+```
+
+```{exercise}
+Using `proc()` show that ;
+
+1) The cube of any integer has the one of the forms $9k, 9k+1$ or $9k+8$.
+2) The fourth power of any integer is either of the form $5k$ or $5k+1$.
+3) For $n\geq 1$, $\frac{n(n+1)(2n+1)}{6}$ is an integer.
+```
+
+```{exercise}
+For $n\geq 1$, establish that thc integer $n(7n^2+5)$ is of the form $6k$.
+```
+
+```{exercise}
+Perfect number is a positive integer that is equal to the sum of its positive divisors: excluding the number itself. Check whether the following numbers are perfect or not.
+
+1) 6
+2) 879
+3) 496
+4) 789879
+5) 8128
+6) 28
+7) 556231
+8) 123423
+```
+
+## Theory of congruence
+
 ### Integer Modulo n
 
-```{definition}
-aa 
+Calculate the value of an integer modulo n. Specify the integer and the modulus, and then calculate the value of the integer in terms of the modulus.
+
+## Complete Squares 
+This function completes the sequences of polynomials of degree 2 in $x$ by re-writing such  polynomials as perfect squares plus a remainder. If more than one variables appears in f, then $x$ must be specified. $x$ can be name, list or a set.
+
 ```
-## Complete Square
+[> with(student) :
+[> completesquare(9*x^2+24*x+16);
+```
+![](figures/NumTheory/fig40.png)
+
+```
+[> completesquare(3*x^2+2*x,x);
+```
+
+![](figures/NumTheory/fig41.png)
+
+```
+[> completesquare(1/(sin(t)^2+2*sin(t)+1),sin(t));
+```
+
+![](figures/NumTheory/fig42.png)
+
+```
+[> completesquare(x^2-2*x*a+a^2+y^2-2*y*b+b^2=23,x);
+[> completesquare(%,y);
+```
+
+![](figures/NumTheory/fig43.png)
+
+## Number Systems
+
+To begin, we will review the manual conversion process between Decimal and Binary, as well as Binary to Decimal, through illustrative examples.
+
+
+![](figures/NumTheory/fig51.png)
+![](figures/NumTheory/fig52.png)
+![](figures/NumTheory/fig53.png)
+![](figures/NumTheory/fig54.png)
+
+### `convert(n,binary)`
+
+
+The function `convert(n,binary)` converts a decimal number $n$ to a binary number. number may be either positive or negative, and may be either an integer or a floating-point number. 
+In the case of a floating-point number, an optional third argument determines the total number of digits of precision in the answer (the default being Digits). The binary number is returned as a base 10 number consisting of the digits 1 and 0 only.
+
+
+```
+[> convert(123,binary);
+```
+
+![](figures/NumTheory/fig44.png)
+
+```
+[> convert(-5,binary);
+```
+
+![](figures/NumTheory/fig45.png)
+
+
+```
+[> convert(0.375,binary);
+[> convert(0.375,binary,2);
+```
+
+![](figures/NumTheory/fig46.png)
+
+
+```
+[> convert(54.6875,binary);
+[> convert(12.34,binary);
+[> convert(1964,binary);
+```
+
+![](figures/NumTheory/fig47.png)
+
+
+### `convert(n,decimal,binary)`
+This command can be used to convert a decimal number into a binary number. Also we can write 2 as a third argument instead of binary.
+
+
+```
+[> convert(101,decimal,binary);
+[> convert(101,decimal,2);
+````
+
+![](figures/NumTheory/fig48.png)
+
+
+```
+[> convert(11110101100,decimal,binary);
+```
+
+![](figures/NumTheory/fig49.png)
+
+
+```
+[> convert(11111111, decimal,2);
+[> convert(0.1101,decimal,2);
+[> convert (1101.0111,decimal,2);
+[> convert (10101011101.01111,decimal,2);
+```
+
+![](figures/NumTheory/fig50.png)
 
 
 
+## Exercise 3
+
+```{exercise}
+Express the following numbers in binary number system
+
+a. 57
+b. 126
+c. 201
+d. 487956
+e. 7879564789
+f. 987.14562 
+g. -456
+i. 8795.2356 
+j. -1213.78
+
+```
+
+```{exercise}
+Express the following binary numbers in the decimal system
+
+a. $(1010101010)_2$
+b. $(1010101)_2$
+c. $(1100110)_2$
+d. $(1010101010)_2$
+e. $(101010.1010)_2$
+f. $(1111.1111)_2$
+g. $(11001100.0011)_2$
+```

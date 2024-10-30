@@ -1,1 +1,299 @@
 # Vector Space and Vector Calculus
+
+
+## Vector Spaces
+A vector space $V$ is a set that is closed under finite vector addition and scalar multiplication. The basic example is $n$-dimensional Euclidean space $\mathbb{R}^n$ , where every element is represented by a list of $n$ real
+numbers, scalars are real numbers, addition is component wise, and scalar multiplication is multiplication on each term separately. Here we discuss some features of the vector spaces and how they can operate via maple software.
+
+To create a *column vector*, specify a comma-delimited sequence, `<a, b, c>`. The number of elements is inferred from the number of expressions.
+
+```
+<a,b,c>
+```
+
+![](figures/VectorCalc/fig1.png)
+
+To create a *row vector*, specify a vertical-bar-delimited (`|`) sequence, `<a | b | c>`. The number of elements is inferred from the number of expressions.
+
+```
+<a|b|c>
+```
+
+![](figures/VectorCalc/fig2.png)
+
+## Basis
+
+```{definition}
+ A basis of $V$ is a list of vectors in $V$ that is 
+
+- linearly independent and,
+- spans $V$.
+```
+
+
+The $\text{Basis}(V)$ function returns a list or set of Vectors that forms a basis for the vector space spanned by the original Vectors in terms of the original Vectors. A basis for the $0$-dimensional space is an empty list or set. If $V$ is a list of Vectors, the $\text{Basis}(V)$ function returns a list of Vectors. If $V$ is a single Vector or a set of Vectors, a set of Vectors is returned.
+
+```
+[> with(Student[LinearAlgebra]):
+[> vl := <1|0|0>;
+[> v2 := <0|1|0>;
+[> v3 := <0|0|1>;
+[> v4 := <0|1|1>;
+[> v5 := <1|1|1>;
+[> v6 := <4|2|0>;
+[> v7 := <3|0|-1>;
+[> Basis([vl,v2,v2]);
+```
+
+![](figures/VectorCalc/fig3.png)
+
+```{example}
+Determine a basis for the space spanned by the set of vectors {(2,13,-15),(7,-2,13),(5,-4,9)}.
+Express the vector (25, -4, 9) with respect to this basis.
+```
+
+
+```
+[> v1:= <2,13,-15>;
+[> v2:= <7,-2,13>;
+[> v3:= <5,-4,9>;
+[> basis:=Matrix(Basis([v1,v2,v3]));
+[> LinearSolve(basis,<25,-4,9>);
+```
+
+![](figures/VectorCalc/fig4.png)
+![](figures/VectorCalc/fig5.png)
+
+
+```{example}
+Determine a basis for the space spanned by the set of vectors {(1,2,2,-1),(1,3,1,1),(1,5,-1,5),(1,1,4,-1),(2,7,0,2)}.
+```
+
+![](figures/VectorCalc/fig7.png)
+![](figures/VectorCalc/fig8.png)
+
+```
+[> Basis({<1,2,2,-1>,<1,3,1,1>,<1,5,-1,5>,<1,1,4,-1>,<2,7,0,2>});
+```
+![](figures/VectorCalc/fig6.png)
+## Row Space and Column Space
+The `RowSpace(A)` (`ColumnSpacc(A)`) function returns a list of row (column) Vectors that form a *basis*  the Vector space spanned by the rows (columns) of Matrix $A$. The Vectors are returned in canonical form with leading entries 1.
+
+The row space(column space) of a zero Matrix is the empty list.
+
+```
+[> A:=<<1,2,0>|<0,2,6>|<0,0,4>|<0,0,0>>;
+[> RowSpace(A);
+[> ColumnSpace(A);
+```
+
+![](figures/VectorCalc/fig9.png)
+
+```
+[> RowSpace(<<0,0>|<0,0>>);
+```
+
+![](figures/VectorCalc/fig10.png)
+
+
+```
+[> B:=<<x,0>|<y,1>>;
+[> ColumnSpace(B);
+```
+![](figures/VectorCalc/fig11.png)
+
+
+
+## Dimension
+
+- `Dimension(A)` function. where $A$ is a Vector, returns a non-negative integer that represents the number of elements in A. If $A$ is a Matrix. two non-negative integers representing the row dimension and the column
+dimension of A. respectively. are returned.
+- The `RowDimension(A)` function, where $A$ is a Matrix, returns a non-negative integer that represents the number of rows in $A$.
+- The `ColumnDimension` function. where $A$ is a Matrix, returns a non-negative integer that represents the number of columns in $A$.
+
+
+```
+[> v:=<x,y,z,w>;
+[> Dimension(v);
+```
+
+
+![](figures/VectorCalc/fig12.png)
+
+```
+[> A:=IdentityMatrix(3,5);
+[> row_dim:=RowDimension(A);
+[> col_dim:=ColumnDimension(A);
+[> m,n:=Dimension(A);
+```
+
+![](figures/VectorCalc/fig13.png)
+
+## Rank
+If $A$ does not have a floating-point data type, then the `Rank(A)` function computes the rank of $A$ by performing Gaussian elimination on the rows of $A$. The rank of Matrix $A$ is the number of non-zero rows in the resulting Matrix.
+
+```
+[> restart;
+[> with (LinearAlgebra) :
+[> A := ScalarMatrix(n,3);
+[> Rank(A);
+```
+
+![](figures/VectorCalc/fig14.png)
+
+
+```
+[> B:=<<-7,1,2>|<2,1,-1>|<3,0,-1>|<2,7,-3>>;
+[> Rank(B);
+[> nops(RowSpace(B));
+```
+
+![](figures/VectorCalc/fig15.png)
+
+
+
+## Vector Fields
+
+A vector field is be a function where the domain is $\mathbb{R}^n$ and the range is $n$-dimensional vectors. Here we discuss some important mathematical concepts on a vector field. 
+
+
+## `Directional derivative(f,var=pts,dir)`
+The `DirectionalDerivative(f,var=pts,dir)` command returns the directional derivative of $f$, evaluated at $pt$ if it is specified in the direction given by $dir$ that is the product of the Jacobian matrix of the function $f$, evaluated at $pt$ if is specified, and the normalized direction sector $dir$.
+
+
+```
+[> with(Student[MultivariateCalculus]);
+[> DirectionalDerivative(3+x*y+2*x*y^2,[x,y]=[-1,3],[2,1]);
+```
+I will add more details and example on this topic later. 
+
+![](figures/VectorCalc/fig16.png)
+
+## $\text{Curl}(A), \text{Divergence}(A)$ and  $\text{Gradient}(A)$
+
+
+```
+[> with(Student[VectorCalculus]);
+```
+### Cartesian system
+
+
+```{definition}
+
+a. The *gradient* of a scalar-valued function \( f(x, y, z) \) is the vector field:
+
+\[ \text{grad}(f)=\nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) \]
+
+Note that the input, \( f \), for the gradient is a scalar-valued function, while the output, \( \nabla f \), is a vector-valued function.
+
+b. The *divergence* of a vector field \( \mathbf{F}(x, y, z)=(F_1,F_2,F_3)=F_1 i +F_2 j+ F_3 k \) is the scalar-valued function:
+
+\[ \text{div} \, \mathbf{F} = \nabla \cdot \mathbf{F} = \left( \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z} \right) \]
+
+Note that the input, \( \mathbf{F} \), for the divergence is a vector-valued function, while the output, \( \nabla \cdot \mathbf{F} \), is a scalar-valued function.
+
+c. The *curl* of a vector field \( \mathbf{F}(x, y, z) \) is the vector field:
+
+\[ 
+\begin{align}
+\text{curl } \mathbf{F} &= \left( \frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z}, \frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right)\\
+&= \nabla \times \mathbf{F}
+\end{align}
+\]
+
+Note that the input, \( \mathbf{F} \), for the curl is a vector-valued function, and the output, \( \nabla \times \mathbf{F} \), is again a vector-valued function.
+
+```
+
+```
+[> SetCoordinates('cartesian'[x,y,z]);
+[> Curl();
+[> Divergence();
+[> Gradient();
+```
+
+![](figures/VectorCalc/fig22.png)
+
+Let's see some examples.
+
+
+![](figures/VectorCalc/fig19.png)
+![](figures/VectorCalc/fig20.png)
+![](figures/VectorCalc/fig21.png)
+
+
+
+
+
+### Cylindrical system
+
+When we expanded the traditional Cartesian coordinate system from two dimensions to three, we simply added a new axis to model the third dimension. Starting with polar coordinates, we can follow this same process to create a new three-dimensional coordinate system, called the cylindrical coordinate system. In this way, cylindrical coordinates provide a natural extension of polar coordinates to three dimensions.
+
+```{definition}
+In the cylindrical coordinate system, a point in space is represented by the ordered triple \((r,\theta,z)\), where:
+  
+- \((r,\theta)\) are the polar coordinates of the point’s projection in the \(xy\)-plane.
+- \(z\) is the usual \(z\)-coordinate in the Cartesian coordinate system.
+```
+
+![ The right triangle lies in the \(xy\)-plane. The length of the hypotenuse is \(r\) and \(\theta\) is the measure of the angle formed by the positive \(x\)-axis and the hypotenuse. The \(z\)-coordinate describes the location of the point above or below the \(xy\)-plane.}](figures/VectorCalc/fig17.png)
+
+
+```
+[> SetCoordinates('cylindrical');
+[> Curl();
+[> Divergence();
+[> Gradient();
+```
+
+
+![](figures/VectorCalc/fig23.png)
+
+### Spherical system
+
+In the Cartesian coordinate system, the location of a point in space is described using an ordered triple in which each coordinate represents a distance. In the cylindrical coordinate system, the location of a point in space is described using two distances (\(r\) and \(z\)) and an angle measure (\(\theta\)). In the spherical coordinate system, we again use an ordered triple to describe the location of a point in space. In this case, the triple describes one distance and two angles. Spherical coordinates make it simple to describe a sphere, just as cylindrical coordinates make it easy to describe a cylinder. Grid lines for spherical coordinates are based on angle measures, like those for polar coordinates.
+
+```{definition,name= 'Spherical Coordinate System'}
+
+In the spherical coordinate system, a point \(P\) in space is represented by the ordered triple \((\rho, \theta, \phi)\) where
+
+- \(\rho\) is the distance between \(P\) and the origin (\(\rho \neq 0\));
+- \(\theta\) is the same angle used to describe the location in cylindrical coordinates;
+- \(\phi\) is the angle formed by the positive \(z\)-axis and line segment \(\overline{OP}\), where \(O\) is the origin and \(0 \leq \phi \leq \pi\).
+```
+![The relationship among spherical, rectangular, and cylindrical coordinates.](figures/VectorCalc/fig18.png)
+
+
+```
+[> SetCoordinates('spherical');
+[> Curl();
+[> Divergence();
+[> Gradient();
+```
+
+![](figures/VectorCalc/fig24.png)
+
+```{example}
+Find the Curl, Divergence of vector feild $\mathbf{F}=yi+-x j+0 k$. can you find the Gradinet?
+```
+
+
+```
+[> F:=VectorField(<y,-x,0>);
+[> Curl(F);
+[> Divergence(F);
+[> Gradient(F);
+```
+
+![](figures/VectorCalc/fig25.png)
+
+Since 
+
+## Tangent vector
+
+
+
+
+
+
+
