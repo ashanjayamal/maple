@@ -287,13 +287,164 @@ Find the Curl, Divergence of vector feild $\mathbf{F}=yi+-x j+0 k$. can you find
 
 ![](figures/VectorCalc/fig25.png)
 
-Since 
+If $A$ is a vector then `Gradient(A)` will interrupt the computation with an error, as well as `Divergence(A)` and `Gradient(A)` when $A$ is scaler (not a vector). 
 
-## Tangent vector
+```{example}
+Find Gradinet of $f(x,y)=x^2+y^2$
+```
+
+```
+Gradient(x^2+y^2);
+```
+
+
+![](figures/VectorCalc/fig26.png)
+
+
+## `Tangent(f,Var)`
+The Tangent(f, Var)` command computes the object tangent to the parametrized curve or surface $f$ at the point specified in the other arguments $var$.
+
+
+```
+> Tangent(<x,y,x^2+y^2>,x=a,y=b);
+```
+
+![](figures/VectorCalc/fig27.png)
+
+```
+[> Tangent(<sin(phi)*cos(theta),sin(phi)*sin(theta),cos(phi)>,phi=Pi/4,theta=Pi/2);
+```
+
+
+![](figures/VectorCalc/fig28.png)
+
+
+## `TangentLine(f,var)`
+The `TangcntLine(f, var)` command computes the tangent line to the curve f at the point specified in $var$.
+
+
+```
+[> restart :
+[> with(Student [VectorCalculus] ) ;
+[> TangentLine (<t^2,t^3>,t=a);
+```
+
+![](figures/VectorCalc/fig29.png)
+
+```
+[> SetCoordinates(cartesian'[x, y]');
+[> TangentLine(x^2,x=a);
+```
+
+![](figures/VectorCalc/fig30.png)
+
+```
+[> TangentLine(<cos(t),sin(t)>,0);
+```
+![](figures/VectorCalc/fig31.png)
 
 
 
 
 
 
+### `TangentPlane(f, varl, var2)`
+The `TangentPlanc(f, varl, var2)` command computes the plane tangent to the surface $f$ at the point specified by $var1$ and $var2$.
 
+```
+[> restart:
+[> with(Student[VectorCalculus]):
+[> TangentPlane(<s,t,s^2+t^2>,s=a,t=b);
+```
+
+![](figures/VectorCalc/fig32.png)
+
+
+```
+[> SetCoordinates('spherical');
+[> TangentPlane( <1,s,t>,s=Pi/4,t=Pi/2);
+```
+
+![](figures/VectorCalc/fig33.png)
+
+## `TangentVcctor(C,t)`
+`Tangent Vector(C,t)` command computes the tangent sector to the curve $C$ that is parametrized by $t$. Note that this vector is not normalized by default. so It is a scalar multiple of the unit tangent vector to the
+curve $C$.
+
+```
+[> restart :
+[> with (Student [VectorCalculus]) :
+[> T1:=TangentVector(t-> <t,t^2,t^3>):
+[> T1(t);
+```
+
+![](figures/VectorCalc/fig34.png)
+
+
+```
+[> T2:=TangentVector(t-><t,t^2,t^3>,normalized ) :
+[> T2(t);
+```
+
+![](figures/VectorCalc/fig35.png)
+
+## `Linelnt(F,dom)`
+The `Linelnt(F,dom)` command computes the line integral of the vector field $F$ over the path specified by $dom$.
+
+
+```
+[> restart :
+[> with (Student[VectorCalculus]):
+[> SetCoordinates(cartesian[x,y]);
+[> LineInt(VectorField(<x,y>), Line(<1,2>,<3,-4>));
+[> LineInt(VectorField(<x,y>), LineSegments(<0,0>,<1,1>,<1,-1>)); 
+[> LineInt(VectorField(<x^2,y^2>), Path(<t,t^2>,t=0..2));
+[> LineInt(VectorField(<y,-x>), Circle(<0,0>,r));
+```
+
+
+![](figures/VectorCalc/fig36.png)
+
+## `Flux (f,dom)`
+The `Flux(f, dom)`, command computes the flux of the vector field $f$ through the surface or curve specified by $dom$.
+
+```
+[> restart;
+[> with (VectorCalculus):
+[> Flux(VectorField(<x,y,z>,cartesian[x, y, z]), Surface( <r,s,t> ,s=0..Pi,t=0..2*Pi, coords=spherical));
+[> Flux(VectorField(<y,-x,0>, cartesian[x,y,z]), Surface( <s,t,s^2+t^2> , [s,t] = Rectangle(0..1,2..3)));
+[> Flux(VectorField(<x,y,z>,cartesian[x,y,z]), Sphere(<0,0,0>,r) ) ;
+```
+
+![](figures/VectorCalc/fig37.png)
+
+
+## Exercises
+
+```{exercise}
+Find the gradient of the follovying scalar fileds
+
+i)   $$f (x,y,z) = xy^2 —yz $$
+ii)  $$f (x,y,z) = \frac{xy^2z}{e^x}$$
+iii) $$f (x,y,z) = x^3y^3 — xyz$$
+
+```
+
+```{exercise}
+Calculate the Divergence of the following vector fields $F(x,y)$ and $G(x,y,z)$
+  
+i)   $$F=xi+yj$$
+ii)  $$F=y^3i+xyj$$
+iii) $$F=3x^2i-6xyj$$
+iv)  $$F=x^2i+2zj-yk$$
+v)   $$G=\frac{4y}{x^2}i+\sin(y)j+3k$$
+vi)  $$G=e^x+\ln(xy)j+e^{xyz}k$$
+```
+
+```{exercise}
+Calculate the curl of the following vector fields $F(x,y,z)$.
+
+i)   $$F(x,y,z) = xi-yj+zk$$
+ii)  $$F(x,y,z) = y^3i+xyj-zk$$
+iii) $$F(x,y,z) = \frac{xi+yj+zk}{\sqrt{x^3}+y^2+z^2}$$
+```

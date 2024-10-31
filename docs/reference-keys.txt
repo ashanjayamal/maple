@@ -112,6 +112,10 @@ def:unnamed-chunk-112
 def:unnamed-chunk-113
 def:unnamed-chunk-114
 exm:unnamed-chunk-115
+exm:unnamed-chunk-116
+exr:unnamed-chunk-117
+exr:unnamed-chunk-118
+exr:unnamed-chunk-119
 introduction-to-maple
 what-is-maple
 using-a-maple-worksheet
@@ -283,4 +287,10 @@ textcurla-textdivergencea-and-textgradienta
 cartesian-system
 cylindrical-system
 spherical-system
-tangent-vector
+tangentfvar
+tangentlinefvar
+tangentplanef-varl-var2
+tangentvcctorct
+linelntfdom
+flux-fdom
+exercises-3

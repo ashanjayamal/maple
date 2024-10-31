@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan J" />
 
 
-<meta name="date" content="2024-10-30" />
+<meta name="date" content="2024-10-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -322,7 +322,15 @@
 <li class="chapter" data-level="13.7.2" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#cylindrical-system"><i class="fa fa-check"></i><b>13.7.2</b> Cylindrical system</a></li>
 <li class="chapter" data-level="13.7.3" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#spherical-system"><i class="fa fa-check"></i><b>13.7.3</b> Spherical system</a></li>
 </ul></li>
-<li class="chapter" data-level="13.8" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#tangent-vector"><i class="fa fa-check"></i><b>13.8</b> Tangent vector</a></li>
+<li class="chapter" data-level="13.8" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#tangentfvar"><i class="fa fa-check"></i><b>13.8</b> <code>Tangent(f,Var)</code></a></li>
+<li class="chapter" data-level="13.9" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#tangentlinefvar"><i class="fa fa-check"></i><b>13.9</b> <code>TangentLine(f,var)</code></a>
+<ul>
+<li class="chapter" data-level="13.9.1" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#tangentplanef-varl-var2"><i class="fa fa-check"></i><b>13.9.1</b> <code>TangentPlane(f, varl, var2)</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13.10" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#tangentvcctorct"><i class="fa fa-check"></i><b>13.10</b> <code>TangentVcctor(C,t)</code></a></li>
+<li class="chapter" data-level="13.11" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#linelntfdom"><i class="fa fa-check"></i><b>13.11</b> <code>Linelnt(F,dom)</code></a></li>
+<li class="chapter" data-level="13.12" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#flux-fdom"><i class="fa fa-check"></i><b>13.12</b> <code>Flux (f,dom)</code></a></li>
+<li class="chapter" data-level="13.13" data-path="vector-space-and-vector-calculus.html"><a href="vector-space-and-vector-calculus.html#exercises-3"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://ashanjayamal.github.io/academicpages/" target="blank">Ashan Jayamal</a></li>
@@ -536,11 +544,110 @@ dimension of A. respectively. are returned.</li>
 [&gt; Divergence(F);
 [&gt; Gradient(F);</code></pre>
 <p><img src="figures/VectorCalc/fig25.png" /></p>
-<p>Since</p>
+<p>If <span class="math inline">\(A\)</span> is a vector then <code>Gradient(A)</code> will interrupt the computation with an error, as well as <code>Divergence(A)</code> and <code>Gradient(A)</code> when <span class="math inline">\(A\)</span> is scaler (not a vector).</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-116" class="example"><strong>Example 13.4  </strong></span>Find Gradinet of <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
+</div>
+<pre><code>Gradient(x^2+y^2);</code></pre>
+<p><img src="figures/VectorCalc/fig26.png" /></p>
 </div>
 </div>
-<div id="tangent-vector" class="section level2 hasAnchor" number="13.8">
-<h2><span class="header-section-number">13.8</span> Tangent vector<a href="vector-space-and-vector-calculus.html#tangent-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tangentfvar" class="section level2 hasAnchor" number="13.8">
+<h2><span class="header-section-number">13.8</span> <code>Tangent(f,Var)</code><a href="vector-space-and-vector-calculus.html#tangentfvar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Tangent(f, Var)` command computes the object tangent to the parametrized curve or surface <span class="math inline">\(f\)</span> at the point specified in the other arguments <span class="math inline">\(var\)</span>.</p>
+<pre><code>&gt; Tangent(&lt;x,y,x^2+y^2&gt;,x=a,y=b);</code></pre>
+<p><img src="figures/VectorCalc/fig27.png" /></p>
+<pre><code>[&gt; Tangent(&lt;sin(phi)*cos(theta),sin(phi)*sin(theta),cos(phi)&gt;,phi=Pi/4,theta=Pi/2);</code></pre>
+<p><img src="figures/VectorCalc/fig28.png" /></p>
+</div>
+<div id="tangentlinefvar" class="section level2 hasAnchor" number="13.9">
+<h2><span class="header-section-number">13.9</span> <code>TangentLine(f,var)</code><a href="vector-space-and-vector-calculus.html#tangentlinefvar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>TangcntLine(f, var)</code> command computes the tangent line to the curve f at the point specified in <span class="math inline">\(var\)</span>.</p>
+<pre><code>[&gt; restart :
+[&gt; with(Student [VectorCalculus] ) ;
+[&gt; TangentLine (&lt;t^2,t^3&gt;,t=a);</code></pre>
+<p><img src="figures/VectorCalc/fig29.png" /></p>
+<pre><code>[&gt; SetCoordinates(cartesian&#39;[x, y]&#39;);
+[&gt; TangentLine(x^2,x=a);</code></pre>
+<p><img src="figures/VectorCalc/fig30.png" /></p>
+<pre><code>[&gt; TangentLine(&lt;cos(t),sin(t)&gt;,0);</code></pre>
+<p><img src="figures/VectorCalc/fig31.png" /></p>
+<div id="tangentplanef-varl-var2" class="section level3 hasAnchor" number="13.9.1">
+<h3><span class="header-section-number">13.9.1</span> <code>TangentPlane(f, varl, var2)</code><a href="vector-space-and-vector-calculus.html#tangentplanef-varl-var2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>TangentPlanc(f, varl, var2)</code> command computes the plane tangent to the surface <span class="math inline">\(f\)</span> at the point specified by <span class="math inline">\(var1\)</span> and <span class="math inline">\(var2\)</span>.</p>
+<pre><code>[&gt; restart:
+[&gt; with(Student[VectorCalculus]):
+[&gt; TangentPlane(&lt;s,t,s^2+t^2&gt;,s=a,t=b);</code></pre>
+<p><img src="figures/VectorCalc/fig32.png" /></p>
+<pre><code>[&gt; SetCoordinates(&#39;spherical&#39;);
+[&gt; TangentPlane( &lt;1,s,t&gt;,s=Pi/4,t=Pi/2);</code></pre>
+<p><img src="figures/VectorCalc/fig33.png" /></p>
+</div>
+</div>
+<div id="tangentvcctorct" class="section level2 hasAnchor" number="13.10">
+<h2><span class="header-section-number">13.10</span> <code>TangentVcctor(C,t)</code><a href="vector-space-and-vector-calculus.html#tangentvcctorct" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Tangent Vector(C,t)</code> command computes the tangent sector to the curve <span class="math inline">\(C\)</span> that is parametrized by <span class="math inline">\(t\)</span>. Note that this vector is not normalized by default. so It is a scalar multiple of the unit tangent vector to the
+curve <span class="math inline">\(C\)</span>.</p>
+<pre><code>[&gt; restart :
+[&gt; with (Student [VectorCalculus]) :
+[&gt; T1:=TangentVector(t-&gt; &lt;t,t^2,t^3&gt;):
+[&gt; T1(t);</code></pre>
+<p><img src="figures/VectorCalc/fig34.png" /></p>
+<pre><code>[&gt; T2:=TangentVector(t-&gt;&lt;t,t^2,t^3&gt;,normalized ) :
+[&gt; T2(t);</code></pre>
+<p><img src="figures/VectorCalc/fig35.png" /></p>
+</div>
+<div id="linelntfdom" class="section level2 hasAnchor" number="13.11">
+<h2><span class="header-section-number">13.11</span> <code>Linelnt(F,dom)</code><a href="vector-space-and-vector-calculus.html#linelntfdom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>Linelnt(F,dom)</code> command computes the line integral of the vector field <span class="math inline">\(F\)</span> over the path specified by <span class="math inline">\(dom\)</span>.</p>
+<pre><code>[&gt; restart :
+[&gt; with (Student[VectorCalculus]):
+[&gt; SetCoordinates(cartesian[x,y]);
+[&gt; LineInt(VectorField(&lt;x,y&gt;), Line(&lt;1,2&gt;,&lt;3,-4&gt;));
+[&gt; LineInt(VectorField(&lt;x,y&gt;), LineSegments(&lt;0,0&gt;,&lt;1,1&gt;,&lt;1,-1&gt;)); 
+[&gt; LineInt(VectorField(&lt;x^2,y^2&gt;), Path(&lt;t,t^2&gt;,t=0..2));
+[&gt; LineInt(VectorField(&lt;y,-x&gt;), Circle(&lt;0,0&gt;,r));</code></pre>
+<p><img src="figures/VectorCalc/fig36.png" /></p>
+</div>
+<div id="flux-fdom" class="section level2 hasAnchor" number="13.12">
+<h2><span class="header-section-number">13.12</span> <code>Flux (f,dom)</code><a href="vector-space-and-vector-calculus.html#flux-fdom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>Flux(f, dom)</code>, command computes the flux of the vector field <span class="math inline">\(f\)</span> through the surface or curve specified by <span class="math inline">\(dom\)</span>.</p>
+<pre><code>[&gt; restart;
+[&gt; with (VectorCalculus):
+[&gt; Flux(VectorField(&lt;x,y,z&gt;,cartesian[x, y, z]), Surface( &lt;r,s,t&gt; ,s=0..Pi,t=0..2*Pi, coords=spherical));
+[&gt; Flux(VectorField(&lt;y,-x,0&gt;, cartesian[x,y,z]), Surface( &lt;s,t,s^2+t^2&gt; , [s,t] = Rectangle(0..1,2..3)));
+[&gt; Flux(VectorField(&lt;x,y,z&gt;,cartesian[x,y,z]), Sphere(&lt;0,0,0&gt;,r) ) ;</code></pre>
+<p><img src="figures/VectorCalc/fig37.png" /></p>
+</div>
+<div id="exercises-3" class="section level2 hasAnchor" number="13.13">
+<h2><span class="header-section-number">13.13</span> Exercises<a href="vector-space-and-vector-calculus.html#exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 13.1  </strong></span>Find the gradient of the follovying scalar fileds</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math display">\[f (x,y,z) = xy^2 —yz \]</span></li>
+<li><span class="math display">\[f (x,y,z) = \frac{xy^2z}{e^x}\]</span></li>
+<li><span class="math display">\[f (x,y,z) = x^3y^3 — xyz\]</span></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-118" class="exercise"><strong>Exercise 13.2  </strong></span>Calculate the Divergence of the following vector fields <span class="math inline">\(F(x,y)\)</span> and <span class="math inline">\(G(x,y,z)\)</span></p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math display">\[F=xi+yj\]</span></li>
+<li><span class="math display">\[F=y^3i+xyj\]</span></li>
+<li><span class="math display">\[F=3x^2i-6xyj\]</span></li>
+<li><span class="math display">\[F=x^2i+2zj-yk\]</span></li>
+<li><span class="math display">\[G=\frac{4y}{x^2}i+\sin(y)j+3k\]</span></li>
+<li><span class="math display">\[G=e^x+\ln(xy)j+e^{xyz}k\]</span></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-119" class="exercise"><strong>Exercise 13.3  </strong></span>Calculate the curl of the following vector fields <span class="math inline">\(F(x,y,z)\)</span>.</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math display">\[F(x,y,z) = xi-yj+zk\]</span></li>
+<li><span class="math display">\[F(x,y,z) = y^3i+xyj-zk\]</span></li>
+<li><span class="math display">\[F(x,y,z) = \frac{xi+yj+zk}{\sqrt{x^3}+y^2+z^2}\]</span></li>
+</ol>
+</div>
 
 </div>
 </div>
