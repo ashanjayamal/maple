@@ -5,25 +5,181 @@
 
 In general we can solve different types of equations to get an exact solution. The solution may be an integer, a fraction, or it may be an expression. Using Maple we can do the same thing using the `solve` command and obtain an exact solutions for equations and inequalities. 
 
+
+
+```
+[> solve(2*x-5=7);  
+
+[> solve(5*x^2=-6*x); 
+
+[> solve(x^2-2*x-1); 
+[> evalf(%); 
+
+[> solve(x^4-4); 
+[> evalf(%); 
+```
+
+
+![](figures/EqnandFun/fig4.png)
+
 ## Equations with multiple unknowns
 
 You can use the solve command to solve equations having several variables. However you have to specify, for which variable that the equation to be solved.
 
+```
+[> solve(a*x^2+b*x+c,x); 
+```
+
+![](figures/EqnandFun/fig5.png)
+
+```
+[> eq1:=2*x+3*y-5; 
+[> solve(eq1,x); 
+[> solve(eq1,y); 
+```
+
+![](figures/EqnandFun/fig6.png)
+
+Maple can also solve absolute value equations.
+
+```
+[> restart; 
+[> eqn1:=abs(3*x+1)=17; 
+[> solve(eqn1); 
+```
+![](figures/EqnandFun/fig7.png)
+
+```
+[> eqn2:=abs(41*y-139); 
+[> solve(eqn2); 
+```
+
+![](figures/EqnandFun/fig8.png)
+
+
+All equations cannot be solved algebraically. It is impossible to find an exact solution. 
+
+```
+[> Eq1:=x^5-x+1=0;
+[> solve(Eq1); 
+```
+
+Using `fsolve` command we can obtain an approximated numerical value for the answer.
+
+```
+[> fsolve(Eq1); 
+[> subs(x=-1.167303978,x^5-x+1);
+```
+
+![](figures/EqnandFun/fig10.png)
+
+You can see that the solution given is not an exact solution. It’s only an approximation.
+
+```
+[> restart;  
+[> Eq2:=x^4-4*x=-1;
+[> solve(%); 
+```
+
+![](figures/EqnandFun/fig11.png)
+ You have to use `fsolve`
+ 
+```
+[> fsolve(Eq2);
+[> subs(x=.2509921575,Eq2);
+[> subs(x=1.493358557,Eq2);  
+```
+
+![](figures/EqnandFun/fig12.png)
+
+### Solving simultaneous equations 
+
+```
+[> eq1:=5*x-7*y=37; 
+[> eq2:=3*x-11*y=17; 
+[> solution:=solve({eq1,eq2},{x,y});
+```
+
+![](figures/EqnandFun/fig13.png)
 
 ## Functions
 Let \(f\) be a function of \(x\). We denote it as \(f(x)\), but in Maple there is a different way to define such functions.
 
 ### Defining functions
 
+```
+[> restart; 
+[> f:=x->3*x+1;  
+[> g:=x->1/(x+2); 
+[> h:=y->3*y^2+2*y-1;
+```
+
+![](figures/EqnandFun/fig14.png)
+Now you have defined functions, you can evaluate them with numbers, fractions, and irrational numbers. 
+
+
+```
+[> f(-5); 
+[> g(1000);g(-7/3); 
+[> g(x); 
+[> g(t); 
+[> h(sqrt(3)); 
+[> evalf(h(sqrt(11)+5)); 
+```
+
+![](figures/EqnandFun/fig15.png)
+![](figures/EqnandFun/fig16.png)
+
 ### Function Operations and Compositions
+
+You can do  `+, -, * ,/,\circ`  between two or more functions.  
+
+
+```
+[> f:=x-> 1/(2*x); 
+[> g:=x->(3*x+1)/(x-3); 
+
+[> f(x)+g(x); #addition of two functions 
+[> simplify(%); 
+
+[> f(x)-g(x); #substraction of two functions 
+[> %=simplify(%); 
+
+[> g(x)*f(x); #multiplying   two functions
+
+[> f(x)/g(x); #division of   two functions 
+
+[> 2*f(x)+7*g(x); # linear combination of two functions 
+[> %=simplify(%); 
+```
+![](figures/EqnandFun/fig17.png)
+![](figures/EqnandFun/fig18.png)
+![](figures/EqnandFun/fig19.png)
+
+
+
 
 ### Composition of functions
 
+
+```
+[> f(g(x)); 
+[> g(f(x)); 
+[> simplify(%); 
+```
+
+![](figures/EqnandFun/fig20.png)
+
+```
+[> f(f(x)); 
+[> g(g(x));
+[> simplify(%); 
+```
+
+![](figures/EqnandFun/fig21.png)
+
 ## Trigonometry with Maple
 
-<!-- sin, cos, ... - The Trigonometric functions\
-sinh, cosh, ... - The Hyperbolic functions 
-Calling Sequence-->
 
 - The Trigonometric functions
 
@@ -44,6 +200,116 @@ Calling Sequence-->
 \]
 
 
+```
+[> sin(90);
+[> evalf(%);
+[> sin(Pi/2);
+```
+
+![](figures/EqnandFun/fig22.png)
+
+> Arguments for all trigonometric and hyperbolic functions must be given in radians. (\(1 \text{radian} = \frac{180}/{\pi}  \text{degrees}\))
+
+
+
+```
+[> cos(68*Pi/180);
+[> evalf(%);
+[> cos(Pi/3);
+[> evalf(csc(2*Pi/3)); 
+```
+
+![](figures/EqnandFun/fig23.png)
+
+### Hyperbolic Functions
+
+```
+[> sinh(2); 
+[> evalf(%); 
+[> evalf(cosh(Pi/3));
+[> evalf(sinh(3+0.17)); 
+```
+
+![](figures/EqnandFun/fig24.png)
+
+### Exponential expansions
+
+The exponential expansions for the trigonometric functions sine and cosine are derived from Euler's formula:
+
+$$
+e^{ix} = \cos(x) + i \sin(x)
+$$`
+
+By manipulating this formula, we can obtain the expansions:
+
+$$
+\begin{align}
+\sin(x) &= \frac{(e^{ix} - e^{-ix})}{2i}\\
+\cos(x) &= \frac{(e^{ix} + e^{-ix})}{2}\\
+\tan(x) &=  \frac{(e^{ix} - e^{-ix})}{i(e^{ix} + e^{-ix})}
+\end{align}
+$$
+Then, Similarly we can define hyperbolic functions,
+
+$$
+\begin{align}
+\sinh(x) &= \frac{e^x - e^{-x}}{2}\\
+\cosh(x) &= \frac{e^x + e^{-x}}{2} \\
+\tanh(x) &= \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\end{align}
+$$
+
+You can verify these results with maple
+
+```
+[> convert(sin(x),exp); 
+[> convert(cos(x),exp); 
+[> convert(tan(x),exp);
+[> convert(sinh(x),exp); 
+[> convert(cosh(x),exp); 
+[> convert(tanh(x),exp);
+```
+![](figures/EqnandFun/fig29.png)
+![](figures/EqnandFun/fig25.png)
+
+### Expanding and simplifying trigonometric functions. 
+
+
+```
+[> expand(sin(2*x)); 
+[> expand(cos(3*x)); 
+[> expand(sin(x+y)); 
+[> simplify(1-(sin(x)^2+cos(x)^2)); 
+[> simplify(1-sin(x)^2+cos(x)^2); 
+```
+
+
+![](figures/EqnandFun/fig26.png)
+
+
+### Converting 
+
+```
+[> convert(Pi/2,degrees); 
+[> convert(1,degrees);        
+[> convert(90*degrees,radians); 
+[> convert((180/Pi)*degrees,radians);
+```
+
+![](figures/EqnandFun/fig27.png)
+
+To get an approximate angle, use `evalf`.  
+
+
+```
+[> evalf(convert(1,degrees)); 
+[> convert(45*degrees,radians); 
+[> convert(57*degrees,radians); 
+[> evalf(convert(57*degrees,radians));
+```
+
+![](figures/EqnandFun/fig28.png)
+
 ## Inverse trigonometric functions
 
 \[
@@ -55,6 +321,27 @@ Calling Sequence-->
 \end{aligned}
 \]
 
+The inverse trigonometric and hyperbolic functions are calculated in radians.
+
+```
+[> arcsin(1); 
+```
+![](figures/EqnandFun/fig1.png)
+If you need the answer in degrees you have to use `convert` command.
+
+```
+[> arccos(-.05); 
+[> convert(%,degrees); 
+[> evalf(%); 
+```
+
+![](figures/EqnandFun/fig2.png)
+
+```
+[> sin(arccos(x));
+```
+
+![](figures/EqnandFun/fig3.png)
 
 ## Exercise
 

@@ -112,6 +112,9 @@ Also you can find higher derivatives by changing $n$. `x$n` As an example the fi
 [> d1_5:=diff(y(x),x$5);
 ```
 ![](figures\Diff\Diff 6.2 -3.png)
+
+
+
 ### Exercise
 
 Certainly! Let's express the given expressions in LaTeX and compute their derivatives:
@@ -278,7 +281,7 @@ Observe how the arrows drawn in the direction field are tangent to the solution 
 ![](figures\Diff\Diff 6.2 -14.png)
 ![](figures\Diff\Diff 6.2 -14.jpg)
   
-### Exercise
+## Exercise
 
 ```{exercise}
 Consider the ODE:   \( \frac{dy}{dx} = y - x^3 \)

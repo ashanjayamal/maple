@@ -181,6 +181,9 @@ You can use above command for polynomials
 [> q
 ```
 ![](figures/NumTheory/fig17.png)
+
+
+
 ### `factorial(n)`
 If $m$ is a positive integer, Maple returns the product of the numbers from $1$ to $m$. If $m$ is $0$ (zero), Maple returns $1$ (one) and $m$ is a negative integer, Maple returns an error.
 
@@ -402,7 +405,7 @@ To add a finite sequence of values, the `add` command can be used. (only for fin
 [> add(i^2,i=1..5);
 ```
 
-![](figures/NumTheory/fig32.png)
+![](figures/NumTheory/fig33.png)
 
 ```
 [> L:=[seq(i,i=1..5)];

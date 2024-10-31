@@ -415,6 +415,7 @@ Example:
 ```
 [> plot([[1, 2], [3, 1], [-2, 1]],style=POINT);
 ```
+
 ![](figures/Plots/fig27.jpg)
 
 - Polar plots
@@ -457,33 +458,44 @@ Example:
 
 ## Exercise
 
-1. Plot the following functions in a suitable domain:
+```{exercise}
+Plot the following functions in a suitable domain:
+  
    - \( x^3 - 12x^2 + 30x - 10 \)
    - \( \sqrt{x} - 1 \)
    - \( 2x^3 + 3x^2 + 1 - \sin(x) \)
    - \( x^4 - 94 \)
+```
 
-2. 
+```{exercise}
+ 
    i. Plot the functions \( x^3 \), \( x^3 - 2x \), \( x^3 + 2x \) on the same axis using the domain \( x = [-2, 2] \).
    
    ii. Plot \( \sin(x) \), \( \sin(2x) \), \( \sin\left(\frac{x}{2}\right) \), \( 2\sin(x) \), \( 2 + \sin(x) \) on the same axis.
    
    iii. Plot the lines \( y = 2x + 1 \), \( y = -2x + 1 \), \( y = 2x - 1 \), \( y = -2x - 1 \) on the same axis.
+```
 
-3. Applying the vertical line test, determine whether the following are functions:
+```{exercise}
+Applying the vertical line test, determine whether the following are functions:
+  
    i. \( 4x^2 + 2y^2 - y^3 = 1 \)
    ii. \( 4x^2 + y^2 - y^3 = 1 \)
    iii. \( x^3 - x + 2y^3 = 1 \)
+```
 
-4. Which of the following functions are one-to-one?
+```{exercise}
+Which of the following functions are one-to-one?
+  
    i. \( f(x) = x \sin(x) \)
    ii. \( f(x) = -2 - x \)
+```
 
-5. 
+```{exercise}
    i. Graph the functions \( y = x^2 - 5x + 6 \) and \( y = 1 \) together. Use different \( y \) ranges so that complete pictures of both graphs are shown.
    
    ii. Graph \( y = -3x + 5 \) and \( y = 9 - x^2 \) on the same axis using a suitable domain. Use the `solve` command to find the value of \( x \) when the two curves intersect.
    
    iii. Graph \( f(x) = x|x| \) and \( \frac{1}{x+1} (x-2)^2 \) together.
-
+```
 

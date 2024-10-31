@@ -86,6 +86,7 @@ This process is called assignment, and you can assign values to the variables by
 ```
 [> New_Age:=Age+4;
 ```
+![](figures/Lesson 1/fig59.png)
 
 
 If you want to reset the predefined value for variables you have to use following methods.
