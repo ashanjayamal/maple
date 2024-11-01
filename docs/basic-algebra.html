@@ -421,6 +421,7 @@ This process is called assignment, and you can assign values to the variables by
 </ul>
 <pre><code>[&gt; restart;
 [&gt; Age;</code></pre>
+<p><img src="figures/Lesson%201/fig60.png" /></p>
 <ul>
 <li><strong>Method II</strong> : <code>unassign</code><br />
 The <code>unassign</code> command unassigns all the unevaluated names given as input.</li>
@@ -429,6 +430,7 @@ The <code>unassign</code> command unassigns all the unevaluated names given as i
 [&gt; x+20;
 [&gt; unassign(&#39;x&#39;);
 [&gt; x+20;</code></pre>
+<p><img src="figures/Lesson%201/fig61.png" /></p>
 </div>
 <div id="substituting-values" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Substituting Values<a href="basic-algebra.html#substituting-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -436,9 +438,9 @@ The <code>unassign</code> command unassigns all the unevaluated names given as i
 <code>subs(variable, expression)</code>.</p>
 <p>Try to use help</p>
 <pre><code>[&gt; ?subs</code></pre>
-<pre><code>&gt; x;
-&gt; subs(x=2,x+5);
-&gt; subs(x=2,x^2-5*x+4);</code></pre>
+<pre><code>[&gt; x;
+[&gt; subs(x=2,x+5);
+[&gt; subs(x=2,x^2-5*x+4);</code></pre>
 <p>It is convenient to make substitution by giving name for an expression.</p>
 <pre><code>&gt; expr:=(2*x+1)/(5-3*x);
 &gt; subs(x=3,expr);</code></pre>

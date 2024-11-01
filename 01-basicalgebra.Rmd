@@ -96,7 +96,7 @@ If you want to reset the predefined value for variables you have to use followin
 [> restart;
 [> Age;
 ```
-
+![](figures/Lesson 1/fig60.png)
 
 - **Method II** : `unassign`\
 The `unassign` command unassigns all the unevaluated names given as input.
@@ -107,7 +107,7 @@ The `unassign` command unassigns all the unevaluated names given as input.
 [> x+20;
 ```
 
-
+![](figures/Lesson 1/fig61.png)
 
 
 
@@ -126,9 +126,9 @@ Try to use help
 [> ?subs
 ```
 ```
-> x;
-> subs(x=2,x+5);
-> subs(x=2,x^2-5*x+4);
+[> x;
+[> subs(x=2,x+5);
+[> subs(x=2,x^2-5*x+4);
 ```
 
 It is convenient to make substitution by giving name for an expression.
